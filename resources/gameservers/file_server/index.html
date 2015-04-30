@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>File server - Nitrapi Documentation</title>
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../../../css/highlight.css">
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+  <script type="text/javascript" src="../../../js/highlight.pack.js"></script>
+  <script src="../../../js/theme.js"></script>
+
+  <style>
+    body {font-size: 90%;}
+    pre, code {font-size: 100%;}
+    h3, h4, h5, h6 {color: #2980b9; font-weight: 300}
+  </style> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../../.." class="icon icon-home"> Nitrapi Documentation</a>
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+      <ul class="current">
+    
+        
+        <span>Documentation</span>
+            
+                <li class="toctree-l1 ">
+                    <a class="" href="../../..">About</a>
+                    
+                </li>
+            
+                <li class="toctree-l1 ">
+                    <a class="" href="../../../oauth">oAuth2</a>
+                    
+                </li>
+            
+        
+
+    
+        
+        <span>Resources</span>
+            
+                <li class="toctree-l1 ">
+                    <a class="" href="../../ping">Ping</a>
+                    
+                </li>
+            
+                <li class="toctree-l1 ">
+                    <a class="" href="../../user">User</a>
+                    
+                </li>
+            
+                <li class="toctree-l1 ">
+                    <a class="" href="../../services">Services</a>
+                    
+                </li>
+            
+        
+
+    
+        
+        <span>Gameserver Resources</span>
+            
+                <li class="toctree-l1 ">
+                    <a class="" href="../global">Global</a>
+                    
+                </li>
+            
+                <li class="toctree-l1 current">
+                    <a class="current" href=".">File server</a>
+                    
+                        <ul>
+                        
+                            <li class="toctree-l2"><a href="#gameserversfile_serverlist">/gameservers/file_server/list</a></li>
+                            
+                        
+                            <li class="toctree-l2"><a href="#gameserversfile_serverdownload">/gameservers/file_server/download</a></li>
+                            
+                        
+                            <li class="toctree-l2"><a href="#gameserversfile_serverupload">/gameservers/file_server/upload</a></li>
+                            
+                        
+                            <li class="toctree-l2"><a href="#gameserversfile_serverdelete">/gameservers/file_server/delete</a></li>
+                            
+                        
+                            <li class="toctree-l2"><a href="#gameserversfile_servercopy">/gameservers/file_server/copy</a></li>
+                            
+                        
+                            <li class="toctree-l2"><a href="#gameserversfile_servermove">/gameservers/file_server/move</a></li>
+                            
+                        
+                        </ul>
+                    
+                </li>
+            
+                <li class="toctree-l1 ">
+                    <a class="" href="../plugin_system">Plugin System</a>
+                    
+                </li>
+            
+        
+
+    
+</ul>
+
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="icon icon-reorder"></i>
+        <a href="../../.."></a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../..">Docs</a> &raquo;</li>
+    <li>File server</li>
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              <p>This is the game server file server documentation.</p>
+<p>For file up- and downloads you will receive a token and token endpoint from the api.
+You can download the files directory from the storage. Uploads can be done also directly to the storage.</p>
+<h2 id="gameserversfile_serverlist">/gameservers/file_server/list</h2>
+<p>This command returns the complete content of a given directory</p>
+<p>Request:</p>
+<pre><code>GET /services/&lt;id&gt;/gameservers/file_server/list?access_token=&lt;access_token&gt;
+</code></pre>
+
+<p>GET Parameter:</p>
+<pre><code>dir=/games/ni1_1/ftproot/ (optional)
+</code></pre>
+
+<p>Response:</p>
+<pre><code class="json">{
+   &quot;status&quot;:&quot;success&quot;,
+   &quot;data&quot;:{
+      &quot;entries&quot;:[
+         {
+            &quot;type&quot;:&quot;file&quot;,
+            &quot;path&quot;:&quot;/games/ni1_1/ftproot/restart.log&quot;,
+            &quot;name&quot;:&quot;restart.log&quot;,
+            &quot;size&quot;:7242,
+            &quot;owner&quot;:&quot;ni1_1&quot;,
+            &quot;group&quot;:&quot;ni1_1&quot;,
+            &quot;chmod&quot;:&quot;100660&quot;,
+            &quot;created_at&quot;:1430319118,
+            &quot;modified_at&quot;:1430319118,
+            &quot;accessed_at&quot;:1430298175
+         },
+         {
+            &quot;type&quot;:&quot;dir&quot;,
+            &quot;path&quot;:&quot;/games/ni1_1/ftproot/minecraft&quot;,
+            &quot;name&quot;:&quot;minecraft&quot;,
+            &quot;owner&quot;:&quot;ni1_1&quot;,
+            &quot;group&quot;:&quot;ni1_1&quot;,
+            &quot;chmod&quot;:&quot;40775&quot;,
+            &quot;created_at&quot;:1430306359,
+            &quot;modified_at&quot;:1430306359
+         }
+      ]
+   }
+}
+</code></pre>
+
+<h2 id="gameserversfile_serverdownload">/gameservers/file_server/download</h2>
+<p>The command returns a file download url to get the file directly from the storage server</p>
+<p>Request:</p>
+<pre><code>GET /services/&lt;id&gt;/gameservers/file_server/download?access_token=&lt;access_token&gt;
+</code></pre>
+
+<p>GET Parameter:</p>
+<pre><code>file=/games/ni1_1/ftproot/restart.log
+</code></pre>
+
+<p>Response:</p>
+<pre><code class="json">{
+  &quot;status&quot;: &quot;success&quot;,
+  &quot;data&quot;: {
+    &quot;token&quot;: {
+      &quot;url&quot;: &quot;http://dev001.nitrado.net:8080/download/?token=7fd95b1f-702b-4b8a-b481-91b41c1f98e5&quot;,
+      &quot;token&quot;: &quot;7fd95b1f-702b-4b8a-b481-91b41c1f98e5&quot;
+    }
+  }
+}
+</code></pre>
+
+<p><strong>Doing the file download</strong></p>
+<p>Just make a GET request to the given url inclusive the token. You will receive the file download stream.</p>
+<h2 id="gameserversfile_serverupload">/gameservers/file_server/upload</h2>
+<p>The command returns a url to upload the file directly to the storage server</p>
+<p>Request:</p>
+<pre><code>POST /services/&lt;id&gt;/gameservers/file_server/upload?access_token=&lt;access_token&gt;
+</code></pre>
+
+<p>POST Parameter:</p>
+<pre><code>path=/games/ni1_1/ftproot/
+file=newFile.txt
+</code></pre>
+
+<p>Response:</p>
+<pre><code class="json">{
+   &quot;status&quot;:&quot;success&quot;,
+   &quot;data&quot;:{
+      &quot;token&quot;:{
+         &quot;url&quot;:&quot;http://dev001.nitrado.net:8080/upload/&quot;,
+         &quot;token&quot;:&quot;8c3ff9b4-b222-4d30-87ae-9dd6a7c0d1d7&quot;
+      }
+   }
+}
+</code></pre>
+
+<p><strong>Doing the file upload</strong></p>
+<p>Make a POST request to the given url storage url. Send the file content as body.
+File streams are supported.</p>
+<p>Header:</p>
+<pre><code>Token: &lt;token&gt;
+Content-Type: application/binary
+</code></pre>
+
+<h2 id="gameserversfile_serverdelete">/gameservers/file_server/delete</h2>
+<p>This commands deletes a file or directory (recursively) </p>
+<p>Request:</p>
+<pre><code>DELETE /services/&lt;id&gt;/gameservers/file_server/delete?access_token=&lt;access_token&gt;
+</code></pre>
+
+<p>DELETE Parameter:</p>
+<pre><code>path=/games/ni1_1/ftproot/restart.log
+</code></pre>
+
+<p>Response:</p>
+<pre><code class="json">{
+   &quot;status&quot;:&quot;success&quot;,
+   &quot;message&quot;:&quot;File or directory has been deleted&quot;
+}
+</code></pre>
+
+<h2 id="gameserversfile_servercopy">/gameservers/file_server/copy</h2>
+<p>This commands copies a file or directory (recursively) </p>
+<p>Request:</p>
+<pre><code>POST /services/&lt;id&gt;/gameservers/file_server/copy?access_token=&lt;access_token&gt;
+</code></pre>
+
+<p>POST Parameter:</p>
+<pre><code>source_path=/games/ni1_1/ftproot/restart.log
+target_path=/games/ni1_1/ftproot/
+target_name=restart-copy.log
+
+</code></pre>
+
+<p>Response:</p>
+<pre><code class="json">{
+   &quot;status&quot;:&quot;success&quot;,
+   &quot;message&quot;:&quot;File or directory has been copied&quot;
+}
+</code></pre>
+
+<h2 id="gameserversfile_servermove">/gameservers/file_server/move</h2>
+<p>This commands renames/moves a file or directory (recursively) </p>
+<p>Request:</p>
+<pre><code>POST /services/&lt;id&gt;/gameservers/file_server/move?access_token=&lt;access_token&gt;
+</code></pre>
+
+<p>POST Parameter for moving a directory:</p>
+<pre><code>source_path=/games/ni1_1/ftproot/minecraft/
+target_path=/games/ni1_1/ftproot/minecraft_move/
+</code></pre>
+
+<p>POST Parameter for moving a file:</p>
+<pre><code>source_path=/games/ni1_1/ftproot/restart.log
+target_path=/games/ni1_1/ftproot/minecraft/
+target_filename=old-restart.log (optional, can be only used for files)
+</code></pre>
+
+<p>Response:</p>
+<pre><code class="json">{
+   &quot;status&quot;:&quot;success&quot;,
+   &quot;message&quot;:&quot;The directory has been moved&quot;
+}
+</code></pre>
+
+
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../plugin_system" class="btn btn-neutral float-right" title="Plugin System"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../global" class="btn btn-neutral" title="Global"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+    <!-- Copyright etc -->
+    </p>
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+<div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+        
+      <span><a href="../global" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      <span style="margin-left: 15px"><a href="../plugin_system" style="color: #fcfcfc">Next &raquo;</a></span>
+    </span>
+</div>
+</body>
+</html>
