@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Plugin System - Nitrapi Documentation</title>
+  <title>Game switching - Nitrapi Documentation</title>
   
 
   
@@ -86,37 +86,34 @@
                     
                 </li>
             
-                <li class="toctree-l1 ">
-                    <a class="" href="../game_switch">Game switching</a>
-                    
-                </li>
-            
-                <li class="toctree-l1 ">
-                    <a class="" href=".">Plugin System</a>
-                    
-                </li>
-            
                 <li class="toctree-l1 current">
-                    <a class="current" href=".">Plugin System</a>
+                    <a class="current" href=".">Game switching</a>
                     
                         <ul>
                         
-                            <li class="toctree-l2"><a href="#gameserversplugin_systeminfo">/gameservers/plugin_system/info</a></li>
+                            <li class="toctree-l2"><a href="#gameserversgames">/gameservers/games</a></li>
                             
                         
-                            <li class="toctree-l2"><a href="#gameserversplugin_systeminstall">/gameservers/plugin_system/install</a></li>
+                            <li class="toctree-l2"><a href="#gameserversgamesstart">/gameservers/games/start</a></li>
                             
                         
-                            <li class="toctree-l2"><a href="#gameserversplugin_systemuninstall">/gameservers/plugin_system/uninstall</a></li>
+                            <li class="toctree-l2"><a href="#gameserversgamesinstall">/gameservers/games/install</a></li>
                             
                         
-                            <li class="toctree-l2"><a href="#gameserversplugin_systemrestart">/gameservers/plugin_system/restart</a></li>
-                            
-                        
-                            <li class="toctree-l2"><a href="#gameserversplugin_systemstop">/gameservers/plugin_system/stop</a></li>
+                            <li class="toctree-l2"><a href="#gameserversgamesuninstall">/gameservers/games/uninstall</a></li>
                             
                         
                         </ul>
+                    
+                </li>
+            
+                <li class="toctree-l1 ">
+                    <a class="" href="../plugin_system">Plugin System</a>
+                    
+                </li>
+            
+                <li class="toctree-l1 ">
+                    <a class="" href="../plugin_system">Plugin System</a>
                     
                 </li>
             
@@ -143,7 +140,7 @@
           <div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href="../../..">Docs</a> &raquo;</li>
-    <li>Plugin System</li>
+    <li>Game switching</li>
       <li class="wy-breadcrumbs-aside">
         
       </li>
@@ -152,42 +149,86 @@
 </div>
           <div role="main">
             <div class="section">
-              <p>This is the Nitrapi Plugin System documentation. </p>
-<p>The Plugin System is currently only available for Battlefield: Hardline.</p>
-<h2 id="gameserversplugin_systeminfo">/gameservers/plugin_system/info</h2>
-<p>This command gives you informations about the installed plugin system</p>
+              <p>This documentation shows you main part of the unique game swichting system.</p>
+<h2 id="gameserversgames">/gameservers/games</h2>
+<p>This command gives you information about the installed and available games.</p>
 <p>Request:</p>
-<pre><code>GET /services/&lt;id&gt;/gameservers/plugin_system/info?access_token=&lt;access_token&gt;
+<pre><code>GET /services/&lt;id&gt;/gameservers/games?access_token=&lt;access_token&gt;
 </code></pre>
 
 <p>Response:</p>
 <pre><code class="json">{
    &quot;status&quot;:&quot;success&quot;,
    &quot;data&quot;:{
-      &quot;plugin_system&quot;:{
-         &quot;username&quot;:&quot;ni1_1&quot;,
-         &quot;status&quot;:&quot;started&quot;,
-         &quot;hostname&quot;:&quot;ps001.nitrado.net&quot;,
-         &quot;ip&quot;:&quot;127.0.0.1&quot;,
-         &quot;port&quot;:5000,
-         &quot;installed_at&quot;:&quot;2015-01-01T12:00:00.000+02:00&quot;,
-         &quot;password&quot;:&quot;4x8x15x16x23x42&quot;,
-         &quot;database&quot;:{
-            &quot;username&quot;:&quot;ni1_1_gps&quot;,
-            &quot;password&quot;:&quot;4x8x15x16x23x42&quot;,
-            &quot;database&quot;:&quot;ni1_1_gps&quot;,
-            &quot;hostname&quot;:&quot;ps001.nitrado.net&quot;
-         }
-      }
+      &quot;installed_currently&quot;:1,
+      &quot;installed_maximum&quot;:5,
+      &quot;games&quot;:[
+         {
+            &quot;name&quot;:&quot;7 Days To Die (Alpha)&quot;,
+            &quot;portlist_short&quot;:&quot;sevendtd&quot;,
+            &quot;folder_short&quot;:&quot;7daystodie&quot;,
+            &quot;installed&quot;:true,
+            &quot;active&quot;:false,
+            &quot;minimum_slots&quot;:0,
+            &quot;enough_slots&quot;:true,
+            &quot;modpacks&quot;:[
+
+            ]
+         },
+         {
+            &quot;name&quot;:&quot;ArmA 3&quot;,
+            &quot;portlist_short&quot;:&quot;arma3&quot;,
+            &quot;folder_short&quot;:&quot;arma3&quot;,
+            &quot;installed&quot;:false,
+            &quot;active&quot;:false,
+            &quot;minimum_slots&quot;:0,
+            &quot;enough_slots&quot;:true,
+            &quot;modpacks&quot;:[
+               {
+                  &quot;name&quot;:&quot;Altis Life&quot;,
+                  &quot;modpack_version&quot;:&quot;3.1.4.8-extDB&quot;,
+                  &quot;modpack_file&quot;:&quot;AltisLife-3.1.4.8-extDB-0.zip&quot;
+               },
+               {
+                  &quot;name&quot;:&quot;(Vanilla)&quot;,
+                  &quot;modpack_version&quot;:&quot;1&quot;,
+                  &quot;modpack_file&quot;:&quot;Vanilla-1-0.zip&quot;
+               }
+            ]
+         },
+         ...
+      ]
    }
 }
 </code></pre>
 
-<h2 id="gameserversplugin_systeminstall">/gameservers/plugin_system/install</h2>
-<p>This command installs you a new plugin system instance.
-If there is already a instance installed you will get an error.</p>
+<h2 id="gameserversgamesstart">/gameservers/games/start</h2>
+<p>Use this command to change the running game if a game is already installed.</p>
 <p>Request:</p>
-<pre><code>POST /services/&lt;id&gt;/gameservers/plugin_system/install?access_token=&lt;access_token&gt;
+<pre><code>POST /services/&lt;id&gt;/gameservers/games/restart?access_token=&lt;access_token&gt;
+</code></pre>
+
+<p>POST Parameters:</p>
+<pre><code>game=7daystodie (provide the folder short of the game list)
+</code></pre>
+
+<p>Response:</p>
+<pre><code class="json">{
+   &quot;status&quot;:&quot;success&quot;,
+   &quot;message&quot;:&quot;Game will be started now&quot;
+}
+</code></pre>
+
+<h2 id="gameserversgamesinstall">/gameservers/games/install</h2>
+<p>This command (re)installs you the specific game.
+Optionally you can provide a modpack to the game.</p>
+<p>Request:</p>
+<pre><code>POST /services/&lt;id&gt;/gameservers/games/install?access_token=&lt;access_token&gt;
+</code></pre>
+
+<p>POST Parameters:</p>
+<pre><code>game=arma3 (provide the folder short of the game list)
+modpack=AltisLife-3.1.4.8-extDB-0.zip (optional, the file name of the modpack)
 </code></pre>
 
 <p>Response:</p>
@@ -197,43 +238,20 @@ If there is already a instance installed you will get an error.</p>
 }
 </code></pre>
 
-<h2 id="gameserversplugin_systemuninstall">/gameservers/plugin_system/uninstall</h2>
-<p>This command uninstalls your plugin system instance.
-If there is no plugin instance you will get an error.</p>
+<h2 id="gameserversgamesuninstall">/gameservers/games/uninstall</h2>
+<p>This command uninstalls a specific game.</p>
 <p>Request:</p>
-<pre><code>DELETE /services/&lt;id&gt;/gameservers/plugin_system/uninstall?access_token=&lt;access_token&gt;
+<pre><code>DELETE /services/&lt;id&gt;/gameservers/games/uninstall?access_token=&lt;access_token&gt;
+</code></pre>
+
+<p>DELETE Parameters:</p>
+<pre><code>game=7daystodie (provide the folder short of the game list)
 </code></pre>
 
 <p>Response:</p>
 <pre><code class="json">{
    &quot;status&quot;:&quot;success&quot;,
-   &quot;message&quot;:&quot;Gameserver Plugin System will be deleted now.&quot;
-}
-</code></pre>
-
-<h2 id="gameserversplugin_systemrestart">/gameservers/plugin_system/restart</h2>
-<p>This command restarts your plugin system instance. </p>
-<p>Request:</p>
-<pre><code>POST /services/&lt;id&gt;/gameservers/plugin_system/restart?access_token=&lt;access_token&gt;
-</code></pre>
-
-<p>Response:</p>
-<pre><code class="json">{
-   &quot;status&quot;:&quot;success&quot;,
-   &quot;message&quot;:&quot;Gameserver Plugin System will be restarted now.&quot;
-}
-</code></pre>
-
-<h2 id="gameserversplugin_systemstop">/gameservers/plugin_system/stop</h2>
-<p>This command stops your plugin system instance. </p>
-<p>Request:</p>
-<pre><code>POST /services/&lt;id&gt;/gameservers/plugin_system/stop?access_token=&lt;access_token&gt;
-</code></pre>
-
-<p>Response:</p>
-<pre><code class="json">{
-   &quot;status&quot;:&quot;success&quot;,
-   &quot;message&quot;:&quot;Gameserver Plugin System will be stopped now.&quot;
+   &quot;message&quot;:&quot;Game 7daystodie will be uninstalled now&quot;
 }
 </code></pre>
 
@@ -244,8 +262,10 @@ If there is no plugin instance you will get an error.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
+        <a href="../plugin_system" class="btn btn-neutral float-right" title="Plugin System"/>Next <span class="icon icon-circle-arrow-right"></span></a>
       
-        <a href="." class="btn btn-neutral" title="Plugin System"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+        <a href="../global" class="btn btn-neutral" title="Global"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -271,8 +291,8 @@ If there is no plugin instance you will get an error.</p>
 <div class="rst-versions" role="note" style="cursor: pointer">
     <span class="rst-current-version" data-toggle="rst-current-version">
         
-      <span><a href="." style="color: #fcfcfc;">&laquo; Previous</a></span>
-      <span style="margin-left: 15px"><a href="" style="color: #fcfcfc">Next &raquo;</a></span>
+      <span><a href="../global" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      <span style="margin-left: 15px"><a href="../plugin_system" style="color: #fcfcfc">Next &raquo;</a></span>
     </span>
 </div>
 </body>

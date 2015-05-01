@@ -104,7 +104,12 @@
                 </li>
             
                 <li class="toctree-l1 ">
-                    <a class="" href="resources/gameservers/file_server/">File server</a>
+                    <a class="" href="resources/gameservers/game_switch/">Game switching</a>
+                    
+                </li>
+            
+                <li class="toctree-l1 ">
+                    <a class="" href="resources/gameservers/plugin_system/">Plugin System</a>
                     
                 </li>
             
@@ -153,7 +158,7 @@
 <p>Normally the access token have a lifetime of 30 days and the refresh token can be used for 3 months.</p>
 <p>API Endpoint: <strong>https://api.nitrado.net</strong></p>
 <h2 id="rate-limits">Rate Limits</h2>
-<p>The API has a rate limit of 500 requests per hour. You can see the amount of remaining requests in the header response. </p>
+<p>The API has a rate limit of 500 requests per hour for each user. You can see the amount of remaining requests in the header response. </p>
 <p>Example headers from HTTP response with 450/500 requests left:</p>
 <pre><code>X-RateLimit-Limit: 500
 X-RateLimit-Remaining: 450
