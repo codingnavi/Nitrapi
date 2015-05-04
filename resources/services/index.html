@@ -102,7 +102,7 @@
                 </li>
             
                 <li class="toctree-l1 ">
-                    <a class="" href="../gameservers/plugin_system">Plugin System</a>
+                    <a class="" href="../gameservers/file_server">File Server</a>
                     
                 </li>
             
@@ -152,21 +152,47 @@
 
 <p>Response:</p>
 <pre><code class="json">{
-    &quot;status&quot;: &quot;success&quot;,
-    &quot;data&quot;: {
-        &quot;services&quot;: [
-            {
-                &quot;id&quot;: 3,
-                &quot;type&quot;: &quot;gameserver&quot;,
-                &quot;username&quot;: &quot;ni2_2&quot;
-            },
-            {
-                &quot;id&quot;: 4,
-                &quot;type&quot;: &quot;gameserver&quot;,
-                &quot;username&quot;: &quot;ni2_3&quot;
-            }
-        ]
-    }
+   &quot;status&quot;:&quot;success&quot;,
+   &quot;data&quot;:{
+      &quot;services&quot;:[
+         {
+            &quot;id&quot;:3,
+            &quot;user_id&quot;:2,
+            &quot;type&quot;:&quot;gameserver&quot;,
+            &quot;username&quot;:&quot;ni2_1&quot;,
+            &quot;roles&quot;:[
+               &quot;ROLE_OWNER&quot;
+            ]
+         },
+         {
+            &quot;id&quot;:6,
+            &quot;user_id&quot;:1,
+            &quot;type&quot;:&quot;gameserver&quot;,
+            &quot;username&quot;:&quot;ni1_1&quot;,
+            &quot;roles&quot;:[
+               &quot;ROLE_GAMESERVER_CHANGE_GAME&quot;,
+               &quot;ROLE_WEBINTERFACE_GENERAL_CONTROL&quot;,
+               &quot;ROLE_WEBINTERFACE_SETTINGS_READ&quot;,
+               &quot;ROLE_WEBINTERFACE_SETTINGS_WRITE&quot;,
+               &quot;ROLE_WEBINTERFACE_LOGS_READ&quot;,
+               &quot;ROLE_WEBINTERFACE_SCHEDULED_RESTART_READ&quot;,
+               &quot;ROLE_WEBINTERFACE_SCHEDULED_RESTART_WRITE&quot;,
+               &quot;ROLE_WEBINTERFACE_BACKUPS_READ&quot;,
+               &quot;ROLE_WEBINTERFACE_BACKUPS_WRITE&quot;,
+               &quot;ROLE_WEBINTERFACE_FTP_CREDENTIALS_READ&quot;,
+               &quot;ROLE_WEBINTERFACE_FTP_CREDENTIALS_WRITE&quot;,
+               &quot;ROLE_WEBINTERFACE_MYSQL_CREDENTIALS_READ&quot;,
+               &quot;ROLE_WEBINTERFACE_DEBUG_CONSOLE_READ&quot;,
+               &quot;ROLE_WEBINTERFACE_DEBUG_CONSOLE_WRITE&quot;,
+               &quot;ROLE_WEBINTERFACE_FILEBROWSER_READ&quot;,
+               &quot;ROLE_WEBINTERFACE_FILEBROWSER_WRITE&quot;,
+               &quot;ROLE_WEBINTERFACE_GAME_RCON_READ&quot;,
+               &quot;ROLE_WEBINTERFACE_GAME_RCON_WRITE&quot;,
+               &quot;ROLE_WEBINTERFACE_MYSQL_CREDENTIALS_WRITE&quot;
+            ]
+         }
+      ]
+   }
 }
 </code></pre>
 
@@ -182,6 +208,7 @@
    &quot;data&quot;:{
       &quot;service&quot;:{
          &quot;id&quot;:3,
+         &quot;user_id&quot;:2,
          &quot;username&quot;:&quot;ni2_2&quot;,
          &quot;type&quot;:&quot;gameserver&quot;,
          &quot;start_date&quot;:1422455269,

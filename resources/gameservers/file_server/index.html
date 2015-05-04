@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>File server - Nitrapi Documentation</title>
+  <title>File Server - Nitrapi Documentation</title>
   
 
   
@@ -86,8 +86,13 @@
                     
                 </li>
             
+                <li class="toctree-l1 ">
+                    <a class="" href="../game_switch">Game switching</a>
+                    
+                </li>
+            
                 <li class="toctree-l1 current">
-                    <a class="current" href=".">File server</a>
+                    <a class="current" href=".">File Server</a>
                     
                         <ul>
                         
@@ -107,6 +112,9 @@
                             
                         
                             <li class="toctree-l2"><a href="#gameserversfile_servermove">/gameservers/file_server/move</a></li>
+                            
+                        
+                            <li class="toctree-l2"><a href="#gameserversfile_servermkdir">/gameservers/file_server/mkdir</a></li>
                             
                         
                         </ul>
@@ -141,7 +149,7 @@
           <div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href="../../..">Docs</a> &raquo;</li>
-    <li>File server</li>
+    <li>File Server</li>
       <li class="wy-breadcrumbs-aside">
         
       </li>
@@ -311,6 +319,24 @@ target_filename=old-restart.log (optional, can be only used for files)
 }
 </code></pre>
 
+<h2 id="gameserversfile_servermkdir">/gameservers/file_server/mkdir</h2>
+<p>This command creates a directory</p>
+<p>Request:</p>
+<pre><code>POST /services/&lt;id&gt;/gameservers/file_server/mkdir?access_token=&lt;access_token&gt;
+</code></pre>
+
+<p>POST Parameter:</p>
+<pre><code>path=/games/ni1_1/ftproot/
+name=newDirectory
+</code></pre>
+
+<p>Response:</p>
+<pre><code class="json">{
+   &quot;status&quot;:&quot;success&quot;,
+   &quot;message&quot;:&quot;The directory has created&quot;
+}
+</code></pre>
+
 
             </div>
           </div>
@@ -321,7 +347,7 @@ target_filename=old-restart.log (optional, can be only used for files)
         <a href="../plugin_system" class="btn btn-neutral float-right" title="Plugin System"/>Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../global" class="btn btn-neutral" title="Global"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../game_switch" class="btn btn-neutral" title="Game switching"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -347,7 +373,7 @@ target_filename=old-restart.log (optional, can be only used for files)
 <div class="rst-versions" role="note" style="cursor: pointer">
     <span class="rst-current-version" data-toggle="rst-current-version">
         
-      <span><a href="../global" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      <span><a href="../game_switch" style="color: #fcfcfc;">&laquo; Previous</a></span>
       <span style="margin-left: 15px"><a href="../plugin_system" style="color: #fcfcfc">Next &raquo;</a></span>
     </span>
 </div>
