@@ -174,9 +174,15 @@
                &quot;status&quot;:&quot;online&quot;
             }
          },
+         &quot;username&quot;: &quot;ni1_1&quot;,
+         &quot;user_id&quot;: 1,
+         &quot;service_id&quot;: 1,
          &quot;minecraft_mode&quot;:false,
          &quot;ip&quot;:&quot;127.0.0.1&quot;,
          &quot;port&quot;:25565,
+         &quot;label&quot;: &quot;ni&quot;,
+         &quot;type&quot;: &quot;Gameserver&quot;,
+         &quot;memory&quot;: &quot;Standard&quot;,
          &quot;game&quot;:&quot;mc&quot;,
          &quot;slots&quot;:4,
          &quot;location&quot;:&quot;DE&quot;,
@@ -217,6 +223,19 @@
 }
 </code></pre>
 
+<p>List of possible gameserver types:</p>
+<ul>
+<li>Gameserver</li>
+<li>Gameserver_Basic</li>
+<li>Gameserver_EPS</li>
+</ul>
+<p>List of possible memory types:</p>
+<ul>
+<li>Standard</li>
+<li>Advanced</li>
+<li>Professional</li>
+<li>Ultimate</li>
+</ul>
 <h2 id="gameserversrestart">/gameservers/restart</h2>
 <p>Starts or restarts the game server. Optional with restart message for restart.log.</p>
 <p>Request:</p>
