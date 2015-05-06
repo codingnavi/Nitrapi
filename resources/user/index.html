@@ -143,7 +143,7 @@
               <h2 id="user">/user</h2>
 <p>The user resource gives you information about your user profile.</p>
 <p>Request:</p>
-<pre><code>GET &lt;endpoint&gt;/user?access_token=&lt;access_token&gt;
+<pre><code>GET /user?access_token=&lt;access_token&gt;
 </code></pre>
 
 <p>Response:</p>
@@ -151,6 +151,7 @@
    &quot;status&quot;:&quot;success&quot;,
    &quot;data&quot;:{
       &quot;user&quot;:{
+         &quot;user_id&quot;:1337,
          &quot;username&quot;:&quot;Marty&quot;,
          &quot;email&quot;:&quot;marty.mcfly@biffco.com&quot;,
          &quot;credit&quot;:1955,

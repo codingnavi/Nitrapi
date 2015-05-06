@@ -196,6 +196,28 @@
 }
 </code></pre>
 
+<p><strong>Available roles and description</strong></p>
+<ul>
+<li>ROLE_GAMESERVER_CHANGE_GAME: Can change server game</li>
+<li>ROLE_WEBINTERFACE_GENERAL_CONTROL: Can use generic control commands</li>
+<li>ROLE_WEBINTERFACE_BACKUPS_READ: Can view current backups</li>
+<li>ROLE_WEBINTERFACE_BACKUPS_WRITE: Can restore available backups</li>
+<li>ROLE_WEBINTERFACE_DEBUG_CONSOLE_READ: Can view the debug console</li>
+<li>ROLE_WEBINTERFACE_DEBUG_CONSOLE_WRITE: Can use the debug console</li>
+<li>ROLE_WEBINTERFACE_FILEBROWSER_READ: Can view/download files from the file server</li>
+<li>ROLE_WEBINTERFACE_FILEBROWSER_WRITE: Can change/upload files via file server</li>
+<li>ROLE_WEBINTERFACE_FTP_CREDENTIALS_READ Can see ftp access credentials</li>
+<li>ROLE_WEBINTERFACE_FTP_CREDENTIALS_WRITE: Can change ftp access credentials</li>
+<li>ROLE_WEBINTERFACE_GAME_RCON_READ: Allows a user to send RCON-commands that retrieve infos</li>
+<li>ROLE_WEBINTERFACE_GAME_RCON_WRITE: Allows a user to send RCON-commands that change settings</li>
+<li>ROLE_WEBINTERFACE_LOGS_READ: Can see webinterface logs</li>
+<li>ROLE_WEBINTERFACE_MYSQL_CREDENTIALS_READ: Can view MySQL access credentials</li>
+<li>ROLE_WEBINTERFACE_MYSQL_CREDENTIALS_WRITE: Can change MySQL access credentials</li>
+<li>ROLE_WEBINTERFACE_SCHEDULED_RESTART_READ: Can view scheduled server restarts</li>
+<li>ROLE_WEBINTERFACE_SCHEDULED_RESTART_WRITE: Can edit scheduled server restarts</li>
+<li>ROLE_WEBINTERFACE_SETTINGS_READ: Has access to server settings</li>
+<li>ROLE_WEBINTERFACE_SETTINGS_WRITE: Can change server settings</li>
+</ul>
 <h2 id="servicesid">/services/:id</h2>
 <p>Get all service informations by a specific service id.</p>
 <p>Request:</p>

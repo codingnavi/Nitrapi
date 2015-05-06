@@ -158,12 +158,15 @@
 <ul>
 <li>https://oauth.nitrado.net/oauth/v2/token</li>
 </ul>
-<p>This is the token endpoit for requesting a refresh token.</p>
+<p>This is the token endpoint for requesting a refresh token.</p>
 <h2 id="access-tokens">Access tokens</h2>
 <p>We do not expire access tokens. The access token will be invalid if a user explicitly rejects your application from the Nitrado website.
 You can pass the access token as GET/POST parameter or in the header as 'Authorization: Bearer XXXXXXXXXXXX'.</p>
 <h2 id="scopes">Scopes</h2>
-<p>The folloing scopes are supported at the moment.</p>
+<p>Scopes let you specify exactly what type of access you need. Scopes limit access for access tokens. 
+Every access token need one or more scopes (space separated).</p>
+<p>The user will be asked for the requested scopes at the authorize form.</p>
+<p>The following scopes are supported at the moment. </p>
 <table>
 <thead>
 <tr>
