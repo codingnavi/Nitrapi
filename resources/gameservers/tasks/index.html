@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Settings - Nitrapi Documentation</title>
+  <title>Tasks - Nitrapi Documentation</title>
   
 
   <link rel="shortcut icon" href="../../../img/favicon.ico">
@@ -20,7 +20,7 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Settings";
+    var mkdocs_page_name = "Tasks";
   </script>
   
   <script src="../../../js/jquery-2.1.1.min.js"></script>
@@ -113,34 +113,31 @@
 
         
             
-    <li class="toctree-l1 current">
-        <a class="current" href="./">Settings</a>
-        
-            <ul>
-            
-                <li class="toctree-l3"><a href="#gameserverssettings">/gameservers/settings</a></li>
-                
-            
-                <li class="toctree-l3"><a href="#gameserverssettingssets">/gameservers/settings/sets</a></li>
-                
-            
-                <li class="toctree-l3"><a href="#gameserverssettingssets_1">/gameservers/settings/sets</a></li>
-                
-            
-                <li class="toctree-l3"><a href="#gameserverssettingssetsid">/gameservers/settings/sets/:id</a></li>
-                
-            
-                <li class="toctree-l3"><a href="#gameserverssettingssetsidrestore">/gameservers/settings/sets/:id/restore</a></li>
-                
-            
-            </ul>
+    <li class="toctree-l1 ">
+        <a class="" href="../settings/">Settings</a>
         
     </li>
 
         
             
-    <li class="toctree-l1 ">
-        <a class="" href="../tasks/">Tasks</a>
+    <li class="toctree-l1 current">
+        <a class="current" href="./">Tasks</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#gameserverstasks">/gameservers/tasks</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#gameserverstasks_1">/gameservers/tasks</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#gameserverstasksid">/gameservers/tasks/:id</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#gameserverstasksid_1">/gameservers/tasks/:id</a></li>
+                
+            
+            </ul>
         
     </li>
 
@@ -202,7 +199,7 @@
         
       
     
-    <li>Settings</li>
+    <li>Tasks</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -212,111 +209,114 @@
           <div role="main">
             <div class="section">
               
-                <h2 id="gameserverssettings">/gameservers/settings</h2>
-<p>Updates a value of a specific setting.</p>
+                <p>This endpoint can be used for managing scheduled tasks for game servers.</p>
+<p>The scheduling time needs to be passed in cron format.</p>
+<p><strong> Available action methods </strong></p>
+<table>
+<thead>
+<tr>
+<th>Action method</th>
+<th>Description</th>
+<th>Action data</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>restart</td>
+<td>Restarts the game server</td>
+<td>Optional restart message</td>
+</tr>
+<tr>
+<td>stop</td>
+<td>Stopps the game server</td>
+<td>Optional stop message</td>
+</tr>
+<tr>
+<td>start</td>
+<td>Starts the game server</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="gameserverstasks">/gameservers/tasks</h2>
+<p>This command returns all available scheduled tasks for this service.</p>
 <p>Request:</p>
-<pre><code>POST /services/&lt;id&gt;/gameservers/settings?access_token=&lt;access_token&gt;
-</code></pre>
-
-<p>POST Parameter:</p>
-<pre><code>category=config
-key=mysetting
-value=true
+<pre><code>GET /services/&lt;id&gt;/gameservers/tasks?access_token=&lt;access_token&gt;
 </code></pre>
 
 <p>Response:</p>
 <pre><code class="json">{
    &quot;status&quot;:&quot;success&quot;,
    &quot;data&quot;:{
-      &quot;settings&quot;:{
-         &quot;config&quot;:{
-            &quot;mysetting&quot;:&quot;true&quot;
-         }
-      }
-   }
-}
-</code></pre>
-
-<h2 id="gameserverssettingssets">/gameservers/settings/sets</h2>
-<p>Lists all available config sets.</p>
-<p>Request:</p>
-<pre><code>GET /services/&lt;id&gt;/gameservers/settings/sets?access_token=&lt;access_token&gt;
-</code></pre>
-
-<p>Response:</p>
-<pre><code class="json">{
-   &quot;status&quot;:&quot;success&quot;,
-   &quot;data&quot;:{
-      &quot;sets&quot;:[
-         {
-            &quot;id&quot;:2,
-            &quot;name&quot;:&quot;2015-05-27 14:54:38 +0200&quot;,
-            &quot;game&quot;:&quot;bf4&quot;,
-            &quot;data&quot;:{
-               &quot;config&quot;:{
-                  &quot;configkey&quot;:&quot;configvalue2&quot;,
-               }
-            },
-            &quot;datetime&quot;:&quot;2015-05-27T14:54:38.000+02:00&quot;,
-            &quot;backup_id&quot;:null
-         },
+      &quot;tasks&quot;:[
          {
             &quot;id&quot;:1,
-            &quot;name&quot;:&quot;2015-05-27 13:56:00 +0200&quot;,
-            &quot;game&quot;:&quot;bf4&quot;,
-            &quot;data&quot;:{
-               &quot;config&quot;:{
-                  &quot;configkey&quot;:&quot;configvalue1&quot;,
-               }
-            },
-            &quot;datetime&quot;:&quot;2015-05-27T13:56:00.000+02:00&quot;,
-            &quot;backup_id&quot;:null
+            &quot;service_id&quot;:1,
+            &quot;minute&quot;:&quot;0&quot;,
+            &quot;hour&quot;:&quot;*&quot;,
+            &quot;day&quot;:&quot;*&quot;,
+            &quot;month&quot;:&quot;*&quot;,
+            &quot;weekday&quot;:&quot;*&quot;,
+            &quot;next_run&quot;:&quot;2015-07-16T10:00:00.000+02:00&quot;,
+            &quot;last_run&quot;:null,
+            &quot;action_method&quot;:&quot;restart&quot;,
+            &quot;action_data&quot;:null
          }
       ]
    }
 }
 </code></pre>
 
-<h2 id="gameserverssettingssets_1">/gameservers/settings/sets</h2>
-<p>Creates a new config set with the current settings.</p>
+<h2 id="gameserverstasks_1">/gameservers/tasks</h2>
+<p>Creates a new scheduled task for the service. </p>
 <p>Request:</p>
-<pre><code>POST /services/&lt;id&gt;/gameservers/settings/sets?access_token=&lt;access_token&gt;
+<pre><code>POST /services/&lt;id&gt;/gameservers/tasks?access_token=&lt;access_token&gt;
 </code></pre>
 
 <p>POST Parameter:</p>
-<pre><code>name=My new config set (optional)
+<pre><code>minute=10
+hour=0,4,6
+day=*
+month=*
+weekday=*
+action_method=restart
+action_data=&quot;Server will be restarted now...&quot; (optional)
 </code></pre>
 
 <p>Response:</p>
 <pre><code class="json">{
    &quot;status&quot;:&quot;success&quot;,
-   &quot;message&quot;:&quot;Set has been created&quot;
+   &quot;message&quot;:&quot;Task has been created&quot;
 }
 </code></pre>
 
-<h2 id="gameserverssettingssetsid">/gameservers/settings/sets/:id</h2>
-<p>Deletes a specific config set.</p>
+<h2 id="gameserverstasksid">/gameservers/tasks/:id</h2>
+<p>Updates a existing scheduled task for the service.</p>
 <p>Request:</p>
-<pre><code>DELETE /services/&lt;id&gt;/gameservers/settings/sets/&lt;id&gt;?access_token=&lt;access_token&gt;
+<pre><code>POST /services/&lt;id&gt;/gameservers/tasks/&lt;id&gt;?access_token=&lt;access_token&gt;
+</code></pre>
+
+<p>POST Parameter:</p>
+<pre><code>action_method=stop
 </code></pre>
 
 <p>Response:</p>
 <pre><code class="json">{
    &quot;status&quot;:&quot;success&quot;,
-   &quot;message&quot;:&quot;Set has been deleted&quot;
+   &quot;message&quot;:&quot;Task has been updated&quot;
 }
 </code></pre>
 
-<h2 id="gameserverssettingssetsidrestore">/gameservers/settings/sets/:id/restore</h2>
-<p>Restores a specific config set.</p>
+<h2 id="gameserverstasksid_1">/gameservers/tasks/:id</h2>
+<p>Deletes the specific scheduled task for the service.</p>
 <p>Request:</p>
-<pre><code>POST /services/&lt;id&gt;/gameservers/settings/sets/&lt;id&gt;/restore?access_token=&lt;access_token&gt;
+<pre><code>DELETE /services/&lt;id&gt;/gameservers/tasks/&lt;id&gt;?access_token=&lt;access_token&gt;
 </code></pre>
 
 <p>Response:</p>
 <pre><code class="json">{
    &quot;status&quot;:&quot;success&quot;,
-   &quot;message&quot;:&quot;Set has been restored&quot;
+   &quot;message&quot;:&quot;The task has been deleted&quot;
 }
 </code></pre>
               
@@ -326,10 +326,10 @@ value=true
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../tasks/" class="btn btn-neutral float-right" title="Tasks"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../game_switch/" class="btn btn-neutral float-right" title="Game switching"/>Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../global/" class="btn btn-neutral" title="Global"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../settings/" class="btn btn-neutral" title="Settings"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -355,10 +355,10 @@ value=true
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href="../global/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../settings/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../tasks/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../game_switch/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>
