@@ -200,6 +200,9 @@
                 <li class="toctree-l3"><a href="#gameserversgamesminecraftuuid">/gameservers/games/minecraft/uuid</a></li>
                 
             
+                <li class="toctree-l3"><a href="#gameserversgamesminecraftavatar">/gameservers/games/minecraft/avatar</a></li>
+                
+            
             </ul>
         
     </li>
@@ -302,6 +305,8 @@
                &quot;size&quot;:185273
             }
          ],
+         &quot;binary_md5&quot;:&quot;cdd49c262cb98db636b8fae2837869ef&quot;,
+         &quot;binary&quot;:&quot;minecraft_server.jar&quot;,
          &quot;overviewmap&quot;:{  
             &quot;enabled&quot;:true,
             &quot;url&quot;:&quot;https://minecraft.nitrado.net/map/127.0.0.1&quot;,
@@ -439,6 +444,30 @@ reset=1 #only if you want to reset it ;-)
          &quot;username&quot;:&quot;tyrola&quot;,
          &quot;uuid&quot;:&quot;abcde123-1234-1234-1234-abcdef123456&quot;,
          &quot;created_at&quot;:&quot;2015-08-01T14:00:00.000+02:00&quot;
+      }
+   }
+}
+</code></pre>
+
+<h2 id="gameserversgamesminecraftavatar">/gameservers/games/minecraft/avatar</h2>
+<p>Returns minecraft avatar information by username.
+Please note: The username is case sensitive.</p>
+<p>Request:</p>
+<pre><code>GET /services/&lt;id&gt;/gameservers/games/minecraft/avatar?access_token=&lt;access_token&gt;
+</code></pre>
+
+<p>GET Parameters:</p>
+<pre><code>username=Tyrola
+</code></pre>
+
+<p>Response:</p>
+<pre><code class="json">{  
+   &quot;status&quot;:&quot;success&quot;,
+   &quot;data&quot;:{  
+      &quot;user&quot;:{  
+         &quot;username&quot;:&quot;Tyrola&quot;,
+         &quot;avatar&quot;:&quot;iVBORw0KGgoAAAANSUhEUgAAAEAAAAAgCAYAAACinX6EAAAB40lEQVRo3u2X\nwU6DMBjH2cmbMfGkByMmevTqUeOdN/FVlig6D2TGN+DiZtTFx/Awk0m8mMWX\nqPu6fVg62o9CUSAl+YW2NKP/Xwt0nkcc58e7TMfHZKjFa/tBCUhe7rU4AU6A\nE+AEOAFOQIsD1o0T0AYBn693LHmK+Bl3eFDvrAAIhwHh/D3/YgcXO2k7lKEN\nhMj9OyUAZxoFYB0FiH06LUBH5wTI4aR/dhy5Hfu/jy/bJ4Ca3SJQq0RH4/YF\nW0dnTMTr9bLQBwuCgF31+xmgDa7Jv792vwK/L5JMogyNEAC8PUcZsL2VAvz9\nPY6JgOljyIHwcG61gDIrAAUgjRUgD2Bj2ycHmXJ4yuQBIbPRMIOqH/XOsICZ\nAFN0Ny8SHgWIErD+ZwI2/ZM0EJbFtrICTMDQlsMXXwGqwJQIiwOtC/NHAELL\nwVUiqAGw+Bdtv8WRV6Y2UrNxuDgP+HlZNtxoqcJRKwIlFZkFKjyGxuBlBKCE\nUgJU7wGVELFsa6mK4U0EYPjKAso8/3UIkMvTh9vCApZUEICbHVX9P16CKEAt\noqIAuInv+xy+7V2VdW2Z6zZmP85HfARkAVifj8KKAlazjGHz0F2z9gjE+V+M\n2gUMbq6ZDlnA2nWLyz3vc0m9BEEAUkbADzNQkGqY9LrzAAAAAElFTkSuQmCC\n&quot;,
+         &quot;created_at&quot;:&quot;2015-09-07T16:49:18.000+02:00&quot;
       }
    }
 }
