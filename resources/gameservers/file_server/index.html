@@ -97,6 +97,13 @@
     </li>
 
         
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../websocket/">Websocket</a>
+        
+    </li>
+
+        
     </ul>
 <li>
           
@@ -160,7 +167,17 @@
                 <li class="toctree-l3"><a href="#gameserversfile_servermkdir">/gameservers/file_server/mkdir</a></li>
                 
             
+                <li class="toctree-l3"><a href="#gameserversfile_serversize">/gameservers/file_server/size</a></li>
+                
+            
             </ul>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../app_server/">App Server</a>
         
     </li>
 
@@ -177,6 +194,28 @@
         <a class="" href="../ddos/">DDoS History</a>
         
     </li>
+
+        
+            
+    <ul class="subnav">
+    <li><span>Games specific</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../games/minecraft/">Minecraft</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../games/minecraft_backups/">Minecraft Backups</a>
+        
+    </li>
+
+        
+    </ul>
 
         
     </ul>
@@ -398,6 +437,25 @@ name=newDirectory
    &quot;message&quot;:&quot;The directory has created&quot;
 }
 </code></pre>
+
+<h2 id="gameserversfile_serversize">/gameservers/file_server/size</h2>
+<p>Calculates the full size of a given file or directory.</p>
+<p>Request:</p>
+<pre><code>GET /services/&lt;id&gt;/gameservers/file_server/size?access_token=&lt;access_token&gt;
+</code></pre>
+
+<p>GET Parameter:</p>
+<pre><code>path=/games/ni1_1/ftproot/
+</code></pre>
+
+<p>Response:</p>
+<pre><code class="json">{  
+   &quot;status&quot;:&quot;success&quot;,
+   &quot;data&quot;:{  
+      &quot;size&quot;:25787022
+   }
+}
+</code></pre>
               
             </div>
           </div>
@@ -405,7 +463,7 @@ name=newDirectory
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../plugin_system/" class="btn btn-neutral float-right" title="Plugin System"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../app_server/" class="btn btn-neutral float-right" title="App Server"/>Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
         <a href="../game_switch/" class="btn btn-neutral" title="Game switching"><span class="icon icon-circle-arrow-left"></span> Previous</a>
@@ -437,7 +495,7 @@ name=newDirectory
         <span><a href="../game_switch/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../plugin_system/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../app_server/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>

@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Services - Nitrapi Documentation</title>
+  <title>Websocket - Nitrapi Documentation</title>
   
 
   <link rel="shortcut icon" href="../../img/favicon.ico">
@@ -20,7 +20,7 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Services";
+    var mkdocs_page_name = "Websocket";
   </script>
   
   <script src="../../js/jquery-2.1.1.min.js"></script>
@@ -91,25 +91,26 @@
 
         
             
-    <li class="toctree-l1 current">
-        <a class="current" href="./">Services</a>
-        
-            <ul>
-            
-                <li class="toctree-l3"><a href="#services">/services</a></li>
-                
-            
-                <li class="toctree-l3"><a href="#servicesid">/services/:id</a></li>
-                
-            
-            </ul>
+    <li class="toctree-l1 ">
+        <a class="" href="../services/">Services</a>
         
     </li>
 
         
             
-    <li class="toctree-l1 ">
-        <a class="" href="../websocket/">Websocket</a>
+    <li class="toctree-l1 current">
+        <a class="current" href="./">Websocket</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#how-to-use">How to use?</a></li>
+                
+                    <li><a class="toctree-l4" href="#outputs">Outputs</a></li>
+                
+                    <li><a class="toctree-l4" href="#samples">Samples</a></li>
+                
+            
+            </ul>
         
     </li>
 
@@ -229,7 +230,7 @@
         
       
     
-    <li>Services</li>
+    <li>Websocket</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -239,106 +240,34 @@
           <div role="main">
             <div class="section">
               
-                <p>Services are your rented products. This resources are very terrific. Be careful with your services, all actions are definite.</p>
-<h2 id="services">/services</h2>
-<p>Get a full list with all rented services and/or services with subuser permissions.</p>
-<p>Request:</p>
-<pre><code>GET /services?access_token=&lt;access_token&gt;
+                <p>The websocket server provides you live information about a specific service.
+Currently only gameservers are supported!</p>
+<h2 id="how-to-use">How to use?</h2>
+<p>To connect to the websocket server, you need 3 information. The label short, the service id and the websocket token.
+The websocket secret will be delivered from the service endpoints.</p>
+<p>The websocket is currently read-only. The websocket (wss://) uses tls for encryption. To send commands use the NITRAPI HTTP interface.</p>
+<p>Sample code (works in the most modern web browsers):</p>
+<pre><code class="javascript">websocket = new WebSocket('wss://websocket.nitrado.net:9001');
+websocket.onopen = function(evt) {
+    websocket.send(JSON.stringify({action: 'login', data: {service_id: 123456, label: 'ni', token: 'b05ac3d5d71a8858fca3011a8c179f1d9ec5ab41'}}));
+};
+websocket.onmessage = function(evt) {
+    data = JSON.parse(evt.data);
+    console.log(data.data);
+    console.log(data.type);
+};
 </code></pre>
 
-<p>Response:</p>
-<pre><code class="json">{
-   &quot;status&quot;:&quot;success&quot;,
-   &quot;data&quot;:{
-      &quot;services&quot;:[
-         {
-            &quot;id&quot;:3,
-            &quot;websocket_token&quot;:&quot;b05ac3d5d71a8858fca3011a8c179f1d9ec5ab41&quot;,
-            &quot;user_id&quot;:2,
-            &quot;type&quot;:&quot;gameserver&quot;,
-            &quot;username&quot;:&quot;ni2_1&quot;,
-            &quot;roles&quot;:[
-               &quot;ROLE_OWNER&quot;
-            ]
-         },
-         {
-            &quot;id&quot;:6,
-            &quot;websocket_token&quot;:&quot;49232226bcf1568bbc2b659325a3339d3af57fea&quot;,
-            &quot;user_id&quot;:1,
-            &quot;type&quot;:&quot;gameserver&quot;,
-            &quot;username&quot;:&quot;ni1_1&quot;,
-            &quot;roles&quot;:[
-               &quot;ROLE_GAMESERVER_CHANGE_GAME&quot;,
-               &quot;ROLE_WEBINTERFACE_GENERAL_CONTROL&quot;,
-               &quot;ROLE_WEBINTERFACE_SETTINGS_READ&quot;,
-               &quot;ROLE_WEBINTERFACE_SETTINGS_WRITE&quot;,
-               &quot;ROLE_WEBINTERFACE_LOGS_READ&quot;,
-               &quot;ROLE_WEBINTERFACE_SCHEDULED_RESTART_READ&quot;,
-               &quot;ROLE_WEBINTERFACE_SCHEDULED_RESTART_WRITE&quot;,
-               &quot;ROLE_WEBINTERFACE_BACKUPS_READ&quot;,
-               &quot;ROLE_WEBINTERFACE_BACKUPS_WRITE&quot;,
-               &quot;ROLE_WEBINTERFACE_FTP_CREDENTIALS_READ&quot;,
-               &quot;ROLE_WEBINTERFACE_FTP_CREDENTIALS_WRITE&quot;,
-               &quot;ROLE_WEBINTERFACE_MYSQL_CREDENTIALS_READ&quot;,
-               &quot;ROLE_WEBINTERFACE_DEBUG_CONSOLE_READ&quot;,
-               &quot;ROLE_WEBINTERFACE_DEBUG_CONSOLE_WRITE&quot;,
-               &quot;ROLE_WEBINTERFACE_FILEBROWSER_READ&quot;,
-               &quot;ROLE_WEBINTERFACE_FILEBROWSER_WRITE&quot;,
-               &quot;ROLE_WEBINTERFACE_GAME_RCON_READ&quot;,
-               &quot;ROLE_WEBINTERFACE_GAME_RCON_WRITE&quot;,
-               &quot;ROLE_WEBINTERFACE_MYSQL_CREDENTIALS_WRITE&quot;
-            ]
-         }
-      ]
-   }
-}
-</code></pre>
-
-<p><strong>Available roles and description</strong></p>
+<h3 id="outputs">Outputs</h3>
+<p>This information will be delivered via the websocket at the moment:</p>
 <ul>
-<li>ROLE_GAMESERVER_CHANGE_GAME: Can change server game</li>
-<li>ROLE_WEBINTERFACE_GENERAL_CONTROL: Can use generic control commands</li>
-<li>ROLE_WEBINTERFACE_BACKUPS_READ: Can view current backups</li>
-<li>ROLE_WEBINTERFACE_BACKUPS_WRITE: Can restore available backups</li>
-<li>ROLE_WEBINTERFACE_DEBUG_CONSOLE_READ: Can view the debug console</li>
-<li>ROLE_WEBINTERFACE_DEBUG_CONSOLE_WRITE: Can use the debug console</li>
-<li>ROLE_WEBINTERFACE_FILEBROWSER_READ: Can view/download files from the file server</li>
-<li>ROLE_WEBINTERFACE_FILEBROWSER_WRITE: Can change/upload files via file server</li>
-<li>ROLE_WEBINTERFACE_FTP_CREDENTIALS_READ Can see ftp access credentials</li>
-<li>ROLE_WEBINTERFACE_FTP_CREDENTIALS_WRITE: Can change ftp access credentials</li>
-<li>ROLE_WEBINTERFACE_GAME_RCON_READ: Allows a user to send RCON-commands that retrieve infos</li>
-<li>ROLE_WEBINTERFACE_GAME_RCON_WRITE: Allows a user to send RCON-commands that change settings</li>
-<li>ROLE_WEBINTERFACE_LOGS_READ: Can see webinterface logs</li>
-<li>ROLE_WEBINTERFACE_MYSQL_CREDENTIALS_READ: Can view MySQL access credentials</li>
-<li>ROLE_WEBINTERFACE_MYSQL_CREDENTIALS_WRITE: Can change MySQL access credentials</li>
-<li>ROLE_WEBINTERFACE_SCHEDULED_RESTART_READ: Can view scheduled server restarts</li>
-<li>ROLE_WEBINTERFACE_SCHEDULED_RESTART_WRITE: Can edit scheduled server restarts</li>
-<li>ROLE_WEBINTERFACE_SETTINGS_READ: Has access to server settings</li>
-<li>ROLE_WEBINTERFACE_SETTINGS_WRITE: Can change server settings</li>
+<li>Query information (all query updates)</li>
+<li>stdout of the running application if its supported</li>
+<li>Background backend tasks states</li>
+<li>Results of commands that are being send to the NITRAPI</li>
 </ul>
-<h2 id="servicesid">/services/:id</h2>
-<p>Get all service informations by a specific service id.</p>
-<p>Request:</p>
-<pre><code>GET /services/&lt;id&gt;?access_token=&lt;access_token&gt;
-</code></pre>
-
-<p>Response:</p>
-<pre><code class="json">{
-   &quot;status&quot;:&quot;success&quot;,
-   &quot;data&quot;:{
-      &quot;service&quot;:{
-         &quot;id&quot;:3,
-         &quot;websocket_token&quot;:&quot;b05ac3d5d71a8858fca3011a8c179f1d9ec5ab41&quot;,
-         &quot;user_id&quot;:2,
-         &quot;username&quot;:&quot;ni2_2&quot;,
-         &quot;type&quot;:&quot;gameserver&quot;,
-         &quot;start_date&quot;:1422455269,
-         &quot;suspend_date&quot;:1425048169,
-         &quot;delete_date&quot;:1425652969
-      }
-   }
-}
-</code></pre>
+<h3 id="samples">Samples</h3>
+<p>Coming soon...</p>
               
             </div>
           </div>
@@ -346,10 +275,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../websocket/" class="btn btn-neutral float-right" title="Websocket"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../gameservers/global/" class="btn btn-neutral float-right" title="Global"/>Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../user/" class="btn btn-neutral" title="User"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../services/" class="btn btn-neutral" title="Services"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -375,10 +304,10 @@
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href="../user/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../services/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../websocket/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../gameservers/global/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>
