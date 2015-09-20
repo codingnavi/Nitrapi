@@ -191,7 +191,13 @@
                 <li class="toctree-l3"><a href="#gameserversgamesminecraftmcmyadmin">/gameservers/games/minecraft/mcmyadmin</a></li>
                 
             
+                <li class="toctree-l3"><a href="#gameserversgamesminecraftrtk">/gameservers/games/minecraft/rtk</a></li>
+                
+            
                 <li class="toctree-l3"><a href="#gameserversgamesminecraftoverviewmap">/gameservers/games/minecraft/overviewmap</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#gameserversgamesminecraftchange_version">/gameservers/games/minecraft/change_version</a></li>
                 
             
                 <li class="toctree-l3"><a href="#gameserversgamesminecraftoverviewmap_render">/gameservers/games/minecraft/overviewmap_render</a></li>
@@ -329,7 +335,38 @@
             &quot;only&quot;:true,
             &quot;firewall&quot;:&quot;on_self&quot;,
             &quot;firewall_ip&quot;:&quot;8.8.8.8&quot;
-         }
+         },
+         &quot;rtk&quot;:{  
+            &quot;enabled&quot;:true,
+            &quot;username&quot;:&quot;ni123456_1&quot;,
+            &quot;password&quot;:&quot;e8cedb815d058f86d248427e0f75d0e8&quot;,
+         },
+         &quot;versions&quot;:[  
+            {  
+               &quot;version&quot;:&quot;1.8&quot;,
+               &quot;name&quot;:&quot;Spigot 1.7/1.8 (beta)&quot;,
+               &quot;md5&quot;:&quot;870c9021be261bd285c966c642b23c32&quot;,
+               &quot;installed&quot;:false
+            },
+            {  
+               &quot;version&quot;:&quot;1.8&quot;,
+               &quot;name&quot;:&quot;Spigot 1.8 R0.1 (20141203)&quot;,
+               &quot;md5&quot;:&quot;c25009775dbd0d2d9918511dc57df0a1&quot;,
+               &quot;installed&quot;:true
+            },
+            {  
+               &quot;version&quot;:&quot;1.8.3&quot;,
+               &quot;name&quot;:&quot;Spigot 1.8.3&quot;,
+               &quot;md5&quot;:&quot;bd1e162378c019cf3ee69ce8b6680b92&quot;,
+               &quot;installed&quot;:false
+            },
+            {  
+               &quot;version&quot;:&quot;1.8.7&quot;,
+               &quot;name&quot;:&quot;Spigot 1.8.7&quot;,
+               &quot;md5&quot;:&quot;360eb2a1ef8fcf81889f0de3bc35d10b&quot;,
+               &quot;installed&quot;:false
+            }
+         ]
       }
    }
 }
@@ -393,6 +430,27 @@ password=blahblahblah
 }
 </code></pre>
 
+<h2 id="gameserversgamesminecraftrtk">/gameservers/games/minecraft/rtk</h2>
+<p>Use this endpoint to change settings on Remote Toolkit. This endpoint is only available at Minecraft Bukkit.
+We recommend to use the App Server instead of RTK.</p>
+<p>Request:</p>
+<pre><code>POST /services/&lt;id&gt;/gameservers/games/minecraft/rtk?access_token=&lt;access_token&gt;
+</code></pre>
+
+<p>POST Parameters:</p>
+<pre><code>enabled=1
+username=ni123456_1
+password=blahblahblah
+
+</code></pre>
+
+<p>Response:</p>
+<pre><code class="json">{  
+   &quot;status&quot;:&quot;success&quot;,
+   &quot;message&quot;:&quot;The RTK settings has been saved&quot;
+}
+</code></pre>
+
 <h2 id="gameserversgamesminecraftoverviewmap">/gameservers/games/minecraft/overviewmap</h2>
 <p>Use this endpoint to change settings on the overview map.</p>
 <p>Note: You can change the enabled status only once within 24 hours. You can reset the map only every 3 days.</p>
@@ -410,6 +468,24 @@ reset=1 #only if you want to reset it ;-)
 <pre><code class="json">{  
    &quot;status&quot;:&quot;success&quot;,
    &quot;message&quot;:&quot;The overviewmap settings has been saved&quot;
+}
+</code></pre>
+
+<h2 id="gameserversgamesminecraftchange_version">/gameservers/games/minecraft/change_version</h2>
+<p>Use this endpoint to switch the running minecraft version.</p>
+<p>This is only available if you run Minecraft Vanilla or Minecraft Bukkit/Spigot.</p>
+<p>Request:</p>
+<pre><code>POST /services/&lt;id&gt;/gameservers/games/minecraft/change_version?access_token=&lt;access_token&gt;
+</code></pre>
+
+<p>POST Parameters:</p>
+<pre><code>md5=bd1e162378c019cf3ee69ce8b6680b92
+</code></pre>
+
+<p>Response:</p>
+<pre><code class="json">{  
+   &quot;status&quot;:&quot;success&quot;,
+   &quot;message&quot;:&quot;The version \&quot;bd1e162378c019cf3ee69ce8b6680b92\&quot; has been installed.&quot;
 }
 </code></pre>
 
