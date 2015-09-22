@@ -121,6 +121,9 @@
                 <li class="toctree-l3"><a href="#gameservers">/gameservers</a></li>
                 
             
+                <li class="toctree-l3"><a href="#gameserversstats">/gameservers/stats</a></li>
+                
+            
                 <li class="toctree-l3"><a href="#gameserversrestart">/gameservers/restart</a></li>
                 
             
@@ -280,6 +283,7 @@
          &quot;label&quot;: &quot;ni&quot;,
          &quot;type&quot;: &quot;Gameserver&quot;,
          &quot;memory&quot;: &quot;Standard&quot;,
+         &quot;memory_total&quot;: 1024,
          &quot;game&quot;:&quot;mc&quot;,
          &quot;modpacks&quot;:{  
             &quot;mcrdns&quot;:{  
@@ -352,6 +356,91 @@
 <li>Professional</li>
 <li>Ultimate</li>
 </ul>
+<h2 id="gameserversstats">/gameservers/stats</h2>
+<p>Truncates the usage statistics of the gameserver.
+Optionally you can specify a time range between 1-24 hours.</p>
+<p>GET Parameters:</p>
+<pre><code>hours=24 (optional)
+</code></pre>
+
+<p>Response:</p>
+<pre><code class="json">{  
+   &quot;status&quot;:&quot;success&quot;,
+   &quot;data&quot;:{  
+      &quot;stats&quot;:{  
+         &quot;currentPlayers&quot;:[  
+            [  
+               0.0,
+               1442849100
+            ],
+            [  
+               0.0,
+               1442849400
+            ],
+            [  
+               0.0,
+               1442849700
+            ],
+            [  
+               0.0,
+               1442850000
+            ],
+            [  
+               0.0,
+               1442850300
+            ],
+            ...
+         ],
+         &quot;maxPlayers&quot;:[  
+            [  
+               4.0,
+               1442849100
+            ],
+            [  
+               4.0,
+               1442849400
+            ],
+            [  
+               4.0,
+               1442849700
+            ],
+            ...
+         ],
+         &quot;cpuUsage&quot;:[  
+            [  
+               2.0,
+               1442849100
+            ],
+            [  
+               2.0,
+               1442849400
+            ],
+            [  
+               2.0,
+               1442849700
+            ],
+            ...
+         ],
+         &quot;memoryUsage&quot;:[  
+            [  
+               346.0,
+               1442849100
+            ],
+            [  
+               346.0,
+               1442849400
+            ],
+            [  
+               346.0,
+               1442849700
+            ],
+            ...
+         ]
+      }
+   }
+}
+</code></pre>
+
 <h2 id="gameserversrestart">/gameservers/restart</h2>
 <p>Starts or restarts the game server. Optional with restart message for restart.log.</p>
 <p>Request:</p>
