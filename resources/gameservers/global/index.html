@@ -121,6 +121,9 @@
                 <li class="toctree-l3"><a href="#gameservers">/gameservers</a></li>
                 
             
+                <li class="toctree-l3"><a href="#gameserversstats">/gameservers/stats</a></li>
+                
+            
                 <li class="toctree-l3"><a href="#gameserversrestart">/gameservers/restart</a></li>
                 
             
@@ -134,6 +137,9 @@
                 
             
                 <li class="toctree-l3"><a href="#gameserversmysqlreset">/gameservers/mysql/reset</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#gameserverslogs">/gameservers/logs</a></li>
                 
             
             </ul>
@@ -280,6 +286,7 @@
          &quot;label&quot;: &quot;ni&quot;,
          &quot;type&quot;: &quot;Gameserver&quot;,
          &quot;memory&quot;: &quot;Standard&quot;,
+         &quot;memory_total&quot;: 1024,
          &quot;game&quot;:&quot;mc&quot;,
          &quot;modpacks&quot;:{  
             &quot;mcrdns&quot;:{  
@@ -313,6 +320,14 @@
                &quot;pvp&quot;:&quot;true&quot;,
                &quot;friendlyfire&quot;:&quot;false&quot;
             }
+         },
+         &quot;quota&quot;:{
+            &quot;block_usage&quot;:1000,
+            &quot;block_softlimit&quot;:2000,
+            &quot;block_hardlimit&quot;:4000,
+            &quot;file_usage&quot;:10,
+            &quot;file_softlimit&quot;:10000,
+            &quot;file_hardlimit&quot;:100000,
          },
          &quot;query&quot;:{
             &quot;server_name&quot;:&quot;Minecraft Server&quot;,
@@ -352,6 +367,91 @@
 <li>Professional</li>
 <li>Ultimate</li>
 </ul>
+<h2 id="gameserversstats">/gameservers/stats</h2>
+<p>Returns the usage statistics of the gameserver.
+Optionally you can specify a time range between 1-24 hours.</p>
+<p>GET Parameters:</p>
+<pre><code>hours=24 (optional)
+</code></pre>
+
+<p>Response:</p>
+<pre><code class="json">{  
+   &quot;status&quot;:&quot;success&quot;,
+   &quot;data&quot;:{  
+      &quot;stats&quot;:{  
+         &quot;currentPlayers&quot;:[  
+            [  
+               0.0,
+               1442849100
+            ],
+            [  
+               0.0,
+               1442849400
+            ],
+            [  
+               0.0,
+               1442849700
+            ],
+            [  
+               0.0,
+               1442850000
+            ],
+            [  
+               0.0,
+               1442850300
+            ],
+            ...
+         ],
+         &quot;maxPlayers&quot;:[  
+            [  
+               4.0,
+               1442849100
+            ],
+            [  
+               4.0,
+               1442849400
+            ],
+            [  
+               4.0,
+               1442849700
+            ],
+            ...
+         ],
+         &quot;cpuUsage&quot;:[  
+            [  
+               2.0,
+               1442849100
+            ],
+            [  
+               2.0,
+               1442849400
+            ],
+            [  
+               2.0,
+               1442849700
+            ],
+            ...
+         ],
+         &quot;memoryUsage&quot;:[  
+            [  
+               346.0,
+               1442849100
+            ],
+            [  
+               346.0,
+               1442849400
+            ],
+            [  
+               346.0,
+               1442849700
+            ],
+            ...
+         ]
+      }
+   }
+}
+</code></pre>
+
 <h2 id="gameserversrestart">/gameservers/restart</h2>
 <p>Starts or restarts the game server. Optional with restart message for restart.log.</p>
 <p>Request:</p>
@@ -434,6 +534,60 @@
 <pre><code class="json">{
   &quot;status&quot;: &quot;success&quot;,
   &quot;message&quot;: &quot;The MySQL database has been reset&quot;
+}
+</code></pre>
+
+<h2 id="gameserverslogs">/gameservers/logs</h2>
+<p>Returns the all log entries for the server. This action shows all done API requests.</p>
+<p>Request:</p>
+<pre><code>POST /services/&lt;id&gt;/gameservers/logs?access_token=&lt;access_token&gt;
+</code></pre>
+
+<p>GET Parameters:</p>
+<pre><code>page=2 (optional)
+</code></pre>
+
+<p>Response:</p>
+<pre><code class="json">{  
+   &quot;status&quot;:&quot;success&quot;,
+   &quot;data&quot;:{  
+      &quot;current_page&quot;:1,
+      &quot;logs_per_page&quot;:40,
+      &quot;page_count&quot;:1,
+      &quot;log_count&quot;:5,
+      &quot;logs&quot;:[  
+         {  
+            &quot;user&quot;:&quot;Tyrola&quot;,
+            &quot;category&quot;:&quot;server&quot;,
+            &quot;message&quot;:&quot;Restart&quot;,
+            &quot;created_at&quot;:&quot;2015-10-07T00:31:23&quot;
+         },
+         {  
+            &quot;user&quot;:&quot;Tyrola&quot;,
+            &quot;category&quot;:&quot;filebrowser&quot;,
+            &quot;message&quot;:&quot;Has edited the file server.properties&quot;,
+            &quot;created_at&quot;:&quot;2015-10-07T00:31:19&quot;
+         },
+         {  
+            &quot;user&quot;:&quot;Tyrola&quot;,
+            &quot;category&quot;:&quot;server&quot;,
+            &quot;message&quot;:&quot;Restart&quot;,
+            &quot;created_at&quot;:&quot;2015-09-28T14:17:07&quot;
+         },
+         {  
+            &quot;user&quot;:&quot;Tyrola&quot;,
+            &quot;category&quot;:&quot;server&quot;,
+            &quot;message&quot;:&quot;Restart&quot;,
+            &quot;created_at&quot;:&quot;2015-09-23T01:18:42&quot;
+         },
+         {  
+            &quot;user&quot;:&quot;Tyrola&quot;,
+            &quot;category&quot;:&quot;server&quot;,
+            &quot;message&quot;:&quot;Restart&quot;,
+            &quot;created_at&quot;:&quot;2015-09-22T23:29:15&quot;
+         }
+      ]
+   }
 }
 </code></pre>
               

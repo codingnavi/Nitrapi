@@ -203,10 +203,16 @@
                 <li class="toctree-l3"><a href="#gameserversgamesminecraftoverviewmap_render">/gameservers/games/minecraft/overviewmap_render</a></li>
                 
             
+                <li class="toctree-l3"><a href="#gameserversgamesminecraftoverviewmap_log">/gameservers/games/minecraft/overviewmap_log</a></li>
+                
+            
                 <li class="toctree-l3"><a href="#gameserversgamesminecraftuuid">/gameservers/games/minecraft/uuid</a></li>
                 
             
                 <li class="toctree-l3"><a href="#gameserversgamesminecraftavatar">/gameservers/games/minecraft/avatar</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#gameserversgamesminecraftplugins">/gameservers/games/minecraft/plugins</a></li>
                 
             
             </ul>
@@ -502,6 +508,19 @@ reset=1 #only if you want to reset it ;-)
 }
 </code></pre>
 
+<h2 id="gameserversgamesminecraftoverviewmap_log">/gameservers/games/minecraft/overviewmap_log</h2>
+<p>Returns the overview map rendering log if available.</p>
+<p>Request:</p>
+<pre><code>GET /services/&lt;id&gt;/gameservers/games/minecraft/overviewmap_log?access_token=&lt;access_token&gt;
+</code></pre>
+
+<p>Response:</p>
+<pre><code class="json">{  
+   &quot;status&quot;:&quot;success&quot;,
+   &quot;log&quot;:&quot;This is the log file&quot;
+}
+</code></pre>
+
 <h2 id="gameserversgamesminecraftuuid">/gameservers/games/minecraft/uuid</h2>
 <p>Returns minecraft user information inclusive UUID by username.</p>
 <p>Request:</p>
@@ -545,6 +564,59 @@ Please note: The username is case sensitive.</p>
          &quot;avatar&quot;:&quot;iVBORw0KGgoAAAANSUhEUgAAAEAAAAAgCAYAAACinX6EAAAB40lEQVRo3u2X\nwU6DMBjH2cmbMfGkByMmevTqUeOdN/FVlig6D2TGN+DiZtTFx/Awk0m8mMWX\nqPu6fVg62o9CUSAl+YW2NKP/Xwt0nkcc58e7TMfHZKjFa/tBCUhe7rU4AU6A\nE+AEOAFOQIsD1o0T0AYBn693LHmK+Bl3eFDvrAAIhwHh/D3/YgcXO2k7lKEN\nhMj9OyUAZxoFYB0FiH06LUBH5wTI4aR/dhy5Hfu/jy/bJ4Ca3SJQq0RH4/YF\nW0dnTMTr9bLQBwuCgF31+xmgDa7Jv792vwK/L5JMogyNEAC8PUcZsL2VAvz9\nPY6JgOljyIHwcG61gDIrAAUgjRUgD2Bj2ycHmXJ4yuQBIbPRMIOqH/XOsICZ\nAFN0Ny8SHgWIErD+ZwI2/ZM0EJbFtrICTMDQlsMXXwGqwJQIiwOtC/NHAELL\nwVUiqAGw+Bdtv8WRV6Y2UrNxuDgP+HlZNtxoqcJRKwIlFZkFKjyGxuBlBKCE\nUgJU7wGVELFsa6mK4U0EYPjKAso8/3UIkMvTh9vCApZUEICbHVX9P16CKEAt\noqIAuInv+xy+7V2VdW2Z6zZmP85HfARkAVifj8KKAlazjGHz0F2z9gjE+V+M\n2gUMbq6ZDlnA2nWLyz3vc0m9BEEAUkbADzNQkGqY9LrzAAAAAElFTkSuQmCC\n&quot;,
          &quot;created_at&quot;:&quot;2015-09-07T16:49:18.000+02:00&quot;
       }
+   }
+}
+</code></pre>
+
+<h2 id="gameserversgamesminecraftplugins">/gameservers/games/minecraft/plugins</h2>
+<p>Returns minecraft bukkit/spigot plugin information for installed plugins.</p>
+<p>Request:</p>
+<pre><code>GET /services/&lt;id&gt;/gameservers/games/minecraft/plugins?access_token=&lt;access_token&gt;
+</code></pre>
+
+<p>Response:</p>
+<pre><code class="json">{  
+   &quot;status&quot;:&quot;success&quot;,
+   &quot;data&quot;:{  
+      &quot;plugins&quot;:[  
+         {  
+            &quot;file&quot;:&quot;ChestShop.jar&quot;,
+            &quot;details&quot;:{  
+               &quot;name&quot;:&quot;ChestShop&quot;,
+               &quot;main&quot;:&quot;com.Acrobot.ChestShop.ChestShop&quot;,
+               &quot;version&quot;:&quot;3.8.12&quot;,
+               .......
+               }
+            }
+         },
+         {  
+            &quot;file&quot;:&quot;Multiverse-Portals.jar&quot;,
+            &quot;details&quot;:{  
+               &quot;name&quot;:&quot;Multiverse-Portals&quot;,
+               &quot;main&quot;:&quot;com.onarandombox.MultiversePortals.MultiversePortals&quot;,
+               &quot;authors&quot;:[  
+                  &quot;Rigby&quot;,
+                  &quot;fernferret&quot;
+               ],
+               &quot;version&quot;:&quot;2.0-b254&quot;,
+               .......
+               }
+            }
+         },
+         {  
+            &quot;file&quot;:&quot;Modifyworld.jar&quot;,
+            &quot;details&quot;:{  
+               &quot;name&quot;:&quot;Modifyworld&quot;,
+               &quot;main&quot;:&quot;ru.tehkode.modifyworld.bukkit.Modifyworld&quot;,
+               &quot;soft-depend&quot;:[  
+                  &quot;PermissionsEx&quot;,
+                  &quot;Vault&quot;
+               ],
+               &quot;version&quot;:&quot;1.19.7&quot;,
+                .......
+            }
+         }
+      ]
    }
 }
 </code></pre>
