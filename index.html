@@ -68,7 +68,9 @@
                 
                     <li><a class="toctree-l4" href="#authentication">Authentication</a></li>
                 
-                    <li><a class="toctree-l4" href="#responses">Responses</a></li>
+                    <li><a class="toctree-l4" href="#http-status-codes">HTTP Status Codes</a></li>
+                
+                    <li><a class="toctree-l4" href="#json-responses">JSON Responses</a></li>
                 
                     <li><a class="toctree-l4" href="#special-thanks">Special thanks</a></li>
                 
@@ -267,7 +269,46 @@ X-RateLimit-Reset: 1426202077
 <li>Append your access token as GET parameter ?access_token=[access_token]</li>
 <li>Add your access token to the request header with Authorization: Basic [access_token]</li>
 </ol>
-<h2 id="responses">Responses</h2>
+<h2 id="http-status-codes">HTTP Status Codes</h2>
+<table>
+<thead>
+<tr>
+<th>Status Code</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200</td>
+<td>Everything works fine. The API response was successful. Data has been delivered.</td>
+</tr>
+<tr>
+<td>201</td>
+<td>Everything works fine. The API response was successful. Data has been created.</td>
+</tr>
+<tr>
+<td>401</td>
+<td>Access denied. Please check your access token and scopes.</td>
+</tr>
+<tr>
+<td>404</td>
+<td>Invalid address. Please check url and HTTP method (GET, POST, PUT, DELETE)</td>
+</tr>
+<tr>
+<td>428</td>
+<td>Concurrency error. The same action is already in progress. Please wait.</td>
+</tr>
+<tr>
+<td>500</td>
+<td>An error occurred. Please try it again or check your parameters. Otherwise create a bug report at Github.</td>
+</tr>
+<tr>
+<td>503</td>
+<td>Maintenance. API is currently not available. Please come back in a few minutes and try it again.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="json-responses">JSON Responses</h2>
 <p>The API uses the <a href="http://labs.omniti.com/labs/jsend">jsend</a> standard for JSON responses.</p>
 <p>This responses are possible:</p>
 <p>Success message:</p>
@@ -356,5 +397,5 @@ X-RateLimit-Reset: 1426202077
 
 <!--
 MkDocs version : 0.14.0
-Build Date UTC : 2015-09-22 16:04:52.664460
+Build Date UTC : 2015-11-18 10:28:33.166076
 -->
