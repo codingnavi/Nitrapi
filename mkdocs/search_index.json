@@ -77,13 +77,33 @@
         }, 
         {
             "location": "/resources/user/", 
-            "text": "/user\n\n\nThe user resource gives you information about your user profile.\n\n\nRequest:\n\n\nGET /user?access_token=\naccess_token\n\n\n\n\n\nResponse:\n\n\n{\n   \nstatus\n:\nsuccess\n,\n   \ndata\n:{\n      \nuser\n:{\n         \nuser_id\n:1337,\n         \nusername\n:\nMarty\n,\n         \ntimezone\n:\nAmerica/Los_Angeles\n,\n         \nemail\n:\nmarty.mcfly@biffco.com\n,\n         \ncredit\n:1955,\n         \nregistred\n:\n1985-25-10T01:15:00.000+00:00\n,\n         \nlanguage\n:\neng\n,\n         \navatar\n:\nhttps://server.nitrado.net/users.nitrado/1337.jpg\n,\n         \nprofile\n:{\n            \nname\n:\nMarty McFly\n,\n            \nstreet\n:\nDeLorean Street 12\n,\n            \npostcode\n:\n2209\n,\n            \ncity\n:\nHill Valley\n\n         }\n      }\n   }\n}", 
+            "text": "/user\n\n\nThe user resource gives you information about your user profile.\n\n\nRequest:\n\n\nGET /user?access_token=\naccess_token\n\n\n\n\n\nResponse:\n\n\n{\n   \nstatus\n:\nsuccess\n,\n   \ndata\n:{\n      \nuser\n:{\n         \nuser_id\n:1337,\n         \nusername\n:\nMarty\n,\n         \ntimezone\n:\nAmerica/Los_Angeles\n,\n         \nemail\n:\nmarty.mcfly@biffco.com\n,\n         \ncredit\n:1955,\n         \ncurrency\n:\nEUR\n,\n         \nregistred\n:\n1985-25-10T01:15:00.000+00:00\n,\n         \nlanguage\n:\neng\n,\n         \navatar\n:\nhttps://server.nitrado.net/users.nitrado/1337.jpg\n,\n         \nprofile\n:{\n            \nname\n:\nMarty McFly\n,\n            \nstreet\n:\nDeLorean Street 12\n,\n            \npostcode\n:\n2209\n,\n            \ncity\n:\nHill Valley\n\n         }\n      }\n   }\n}\n\n\n\n\n/user/webinterface_token\n\n\nTo access the webinterface you need a special access token with a lifetime of 24 hours.\nYou can request this access token via this endpoint.\n\n\nThe token will only change every 24 hours and will be cached.\nFor detailed information about the Webinterface Login please \nclick here\n.\n\n\nRequest:\n\n\nGET /user/webinterface_token?access_token=\naccess_token\n\n\n\n\n\nResponse:\n\n\n{\n   \nstatus\n:\nsuccess\n,\n   \ndata\n:{\n      \ntoken\n:{\n         \ntoken\n:\nmRtAApJS2XXXXXXXXXXXXXXXXXw6scyt9g7CsKAfg0MpjMQ5PfXXXXXXXXXXXXXXXXXXW\n,\n         \nvalid_until\n:\n2016-01-22T14:01:03\n\n      }\n   }\n}\n\n\n\n\n/user/webinterface_token\n\n\nThis endpoint allows you to logout all users from your webinterface.\n\n\nRequest:\n\n\nDELETE /user/webinterface_token?access_token=\naccess_token\n\n\n\n\n\nResponse:\n\n\n{\n   \nstatus\n:\nsuccess\n,\n   \nmessage\n:\nAll webinterface tokens has been expired from the system.\n\n}", 
             "title": "User"
         }, 
         {
             "location": "/resources/user/#user", 
-            "text": "The user resource gives you information about your user profile.  Request:  GET /user?access_token= access_token   Response:  {\n    status : success ,\n    data :{\n       user :{\n          user_id :1337,\n          username : Marty ,\n          timezone : America/Los_Angeles ,\n          email : marty.mcfly@biffco.com ,\n          credit :1955,\n          registred : 1985-25-10T01:15:00.000+00:00 ,\n          language : eng ,\n          avatar : https://server.nitrado.net/users.nitrado/1337.jpg ,\n          profile :{\n             name : Marty McFly ,\n             street : DeLorean Street 12 ,\n             postcode : 2209 ,\n             city : Hill Valley \n         }\n      }\n   }\n}", 
+            "text": "The user resource gives you information about your user profile.  Request:  GET /user?access_token= access_token   Response:  {\n    status : success ,\n    data :{\n       user :{\n          user_id :1337,\n          username : Marty ,\n          timezone : America/Los_Angeles ,\n          email : marty.mcfly@biffco.com ,\n          credit :1955,\n          currency : EUR ,\n          registred : 1985-25-10T01:15:00.000+00:00 ,\n          language : eng ,\n          avatar : https://server.nitrado.net/users.nitrado/1337.jpg ,\n          profile :{\n             name : Marty McFly ,\n             street : DeLorean Street 12 ,\n             postcode : 2209 ,\n             city : Hill Valley \n         }\n      }\n   }\n}", 
             "title": "/user"
+        }, 
+        {
+            "location": "/resources/user/#userwebinterface_token", 
+            "text": "To access the webinterface you need a special access token with a lifetime of 24 hours.\nYou can request this access token via this endpoint.  The token will only change every 24 hours and will be cached.\nFor detailed information about the Webinterface Login please  click here .  Request:  GET /user/webinterface_token?access_token= access_token   Response:  {\n    status : success ,\n    data :{\n       token :{\n          token : mRtAApJS2XXXXXXXXXXXXXXXXXw6scyt9g7CsKAfg0MpjMQ5PfXXXXXXXXXXXXXXXXXXW ,\n          valid_until : 2016-01-22T14:01:03 \n      }\n   }\n}", 
+            "title": "/user/webinterface_token"
+        }, 
+        {
+            "location": "/resources/user/#userwebinterface_token_1", 
+            "text": "This endpoint allows you to logout all users from your webinterface.  Request:  DELETE /user/webinterface_token?access_token= access_token   Response:  {\n    status : success ,\n    message : All webinterface tokens has been expired from the system. \n}", 
+            "title": "/user/webinterface_token"
+        }, 
+        {
+            "location": "/resources/token/", 
+            "text": "/token\n\n\nThe token endpoint returns you information about the given access token.\n\n\nRequest:\n\n\nGET /token?access_token=\naccess_token\n\n\n\n\n\nResponse:\n\n\n{\n   \nstatus\n:\nsuccess\n,\n   \ndata\n:{\n      \ntoken\n:{\n         \naccess_token\n:\nNXXXXXXXXXXXXXXXXXXXXXXkYjViYzIxXXXXXXXXXXXXXXXXXwMWNhNjU0ZQ\n,\n         \nuser\n:{\n            \nid\n:1,\n            \nusername\n:\nTyrola\n\n         },\n         \nvalid_until\n:\n2018-07-29T02:01:55\n,\n         \nscopes\n:[\n            \nuser_info\n,\n            \nservice\n,\n            \nservice_order\n\n         ],\n         \nemployee\n:false\n      }\n   }\n}", 
+            "title": "Token"
+        }, 
+        {
+            "location": "/resources/token/#token", 
+            "text": "The token endpoint returns you information about the given access token.  Request:  GET /token?access_token= access_token   Response:  {\n    status : success ,\n    data :{\n       token :{\n          access_token : NXXXXXXXXXXXXXXXXXXXXXXkYjViYzIxXXXXXXXXXXXXXXXXXwMWNhNjU0ZQ ,\n          user :{\n             id :1,\n             username : Tyrola \n         },\n          valid_until : 2018-07-29T02:01:55 ,\n          scopes :[\n             user_info ,\n             service ,\n             service_order \n         ],\n          employee :false\n      }\n   }\n}", 
+            "title": "/token"
         }, 
         {
             "location": "/resources/services/", 
@@ -107,8 +127,28 @@
         }, 
         {
             "location": "/resources/websocket/#how-to-use", 
-            "text": "To connect to the websocket server, you need 3 information. The label short, the service id and the websocket token.\nThe websocket secret will be delivered from the service endpoints.  The websocket is currently read-only. The websocket (wss://) uses tls for encryption. To send commands use the NITRAPI HTTP interface.  Sample code (works in the most modern web browsers):  websocket = new WebSocket('wss://websocket.nitrado.net:9001');\nwebsocket.onopen = function(evt) {\n    websocket.send(JSON.stringify({action: 'login', data: {service_id: 123456, label: 'ni', token: 'b05ac3d5d71a8858fca3011a8c179f1d9ec5ab41'}}));\n};\nwebsocket.onmessage = function(evt) {\n    data = JSON.parse(evt.data);\n    console.log(data.data);\n    console.log(data.type);\n};  Outputs  This information will be delivered via the websocket at the moment:   Query information (all query updates)  stdout of the running application if its supported  Background backend tasks states  Results of commands that are being send to the NITRAPI   Samples  Coming soon...", 
+            "text": "To connect to the websocket server, you need 3 information. The label short, the service id and the websocket token.\nThe websocket secret will be delivered from the service endpoints.  The websocket is currently read-only. The websocket (wss://) uses tls for encryption. To send commands use the NITRAPI HTTP interface.  Sample code (works in the most modern web browsers):  websocket = new WebSocket('wss://websocket.nitrado.net:9001');\nwebsocket.onopen = function(evt) {\n    websocket.send(JSON.stringify({action: 'login', data: {service_id: 123456, label: 'ni', token: 'b05ac3d5d71a8858fca3011a8c179f1d9ec5ab41'}}));\n};\nwebsocket.onmessage = function(evt) {\n    data = JSON.parse(evt.data);\n    console.log(data.data);\n    console.log(data.type);\n};", 
             "title": "How to use?"
+        }, 
+        {
+            "location": "/resources/websocket/#outputs", 
+            "text": "This information will be delivered via the websocket at the moment:   Query information (all query updates)  stdout of the running application if its supported  Background backend tasks states  Results of commands that are being send to the NITRAPI", 
+            "title": "Outputs"
+        }, 
+        {
+            "location": "/resources/websocket/#samples", 
+            "text": "Coming soon...", 
+            "title": "Samples"
+        }, 
+        {
+            "location": "/resources/webinterface/", 
+            "text": "The Nitrado Webinterface is now accessible via Nitrapi.\n\n\nLogin\n\n\nTo login into the Webinterface you need a special access token. You can request this token like described in the \nuser resource\n section.\nEach token has a lifetime of 24 hours.\n\n\nAfter you have received your access you can pass it to the Nitrado Webinterface. Just redirect the user to the following url:\n\n\nhttps://webinterface.nitrado.net/?access_token=XXXXXXXXXXX\nlanguage=deu\nservice_id=XXXXXXXX\n\n\n\n\nYou need to replace the 3 parameters access_token, language and service_id.", 
+            "title": "Webinterface"
+        }, 
+        {
+            "location": "/resources/webinterface/#login", 
+            "text": "To login into the Webinterface you need a special access token. You can request this token like described in the  user resource  section.\nEach token has a lifetime of 24 hours.  After you have received your access you can pass it to the Nitrado Webinterface. Just redirect the user to the following url:  https://webinterface.nitrado.net/?access_token=XXXXXXXXXXX language=deu service_id=XXXXXXXX  You need to replace the 3 parameters access_token, language and service_id.", 
+            "title": "Login"
         }, 
         {
             "location": "/resources/gameservers/global/", 

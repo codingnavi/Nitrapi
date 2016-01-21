@@ -3,7 +3,10 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <meta name="author" content="marbis GmbH">
   
   <title>User - Nitrapi Documentation</title>
   
@@ -21,6 +24,8 @@
   <script>
     // Current page data
     var mkdocs_page_name = "User";
+    var mkdocs_page_input_path = "resources/user.md";
+    var mkdocs_page_url = "/resources/user/";
   </script>
   
   <script src="../../js/jquery-2.1.1.min.js"></script>
@@ -92,7 +97,20 @@
                 <li class="toctree-l3"><a href="#user">/user</a></li>
                 
             
+                <li class="toctree-l3"><a href="#userwebinterface_token">/user/webinterface_token</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#userwebinterface_token_1">/user/webinterface_token</a></li>
+                
+            
             </ul>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../token/">Token</a>
         
     </li>
 
@@ -107,6 +125,13 @@
             
     <li class="toctree-l1 ">
         <a class="" href="../websocket/">Websocket</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../webinterface/">Webinterface</a>
         
     </li>
 
@@ -252,6 +277,7 @@
          &quot;timezone&quot;:&quot;America/Los_Angeles&quot;,
          &quot;email&quot;:&quot;marty.mcfly@biffco.com&quot;,
          &quot;credit&quot;:1955,
+         &quot;currency&quot;:&quot;EUR&quot;,
          &quot;registred&quot;:&quot;1985-25-10T01:15:00.000+00:00&quot;,
          &quot;language&quot;:&quot;eng&quot;,
          &quot;avatar&quot;:&quot;https://server.nitrado.net/users.nitrado/1337.jpg&quot;,
@@ -265,6 +291,40 @@
    }
 }
 </code></pre>
+
+<h2 id="userwebinterface_token">/user/webinterface_token</h2>
+<p>To access the webinterface you need a special access token with a lifetime of 24 hours.
+You can request this access token via this endpoint.</p>
+<p>The token will only change every 24 hours and will be cached.
+For detailed information about the Webinterface Login please <a href="../../resources/webinterface/">click here</a>.</p>
+<p>Request:</p>
+<pre><code>GET /user/webinterface_token?access_token=&lt;access_token&gt;
+</code></pre>
+
+<p>Response:</p>
+<pre><code class="json">{
+   &quot;status&quot;:&quot;success&quot;,
+   &quot;data&quot;:{
+      &quot;token&quot;:{
+         &quot;token&quot;:&quot;mRtAApJS2XXXXXXXXXXXXXXXXXw6scyt9g7CsKAfg0MpjMQ5PfXXXXXXXXXXXXXXXXXXW&quot;,
+         &quot;valid_until&quot;:&quot;2016-01-22T14:01:03&quot;
+      }
+   }
+}
+</code></pre>
+
+<h2 id="userwebinterface_token_1">/user/webinterface_token</h2>
+<p>This endpoint allows you to logout all users from your webinterface.</p>
+<p>Request:</p>
+<pre><code>DELETE /user/webinterface_token?access_token=&lt;access_token&gt;
+</code></pre>
+
+<p>Response:</p>
+<pre><code class="json">{
+   &quot;status&quot;:&quot;success&quot;,
+   &quot;message&quot;:&quot;All webinterface tokens has been expired from the system.&quot;
+}
+</code></pre>
               
             </div>
           </div>
@@ -272,7 +332,7 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../services/" class="btn btn-neutral float-right" title="Services"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../token/" class="btn btn-neutral float-right" title="Token">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
         <a href="../ping/" class="btn btn-neutral" title="Ping"><span class="icon icon-circle-arrow-left"></span> Previous</a>
@@ -304,7 +364,7 @@
         <span><a href="../ping/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../services/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../token/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>
