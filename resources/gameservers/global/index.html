@@ -240,6 +240,28 @@
     </ul>
 <li>
           
+            <li>
+    <ul class="subnav">
+    <li><span>Voiceserver Resources</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../voiceservers/global/">Global</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../voiceservers/backup/">Backup</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
         </ul>
       </div>
       &nbsp;
@@ -546,7 +568,8 @@ Optionally you can specify a time range between 1-24 hours.</p>
 </code></pre>
 
 <p>POST Parameters:</p>
-<pre><code>message=This is a restart command (optional)
+<pre><code>message=This message will be posted in the restart.log File (optional)
+restart_message=This message will be posted in the Ingame Chat if available (optional)
 </code></pre>
 
 <p>Response:</p>
@@ -563,7 +586,8 @@ Optionally you can specify a time range between 1-24 hours.</p>
 </code></pre>
 
 <p>POST Parameters:</p>
-<pre><code>message=This is a stop command (optional)
+<pre><code>message=This message will be posted in the restart.log File (optional)
+stop_message=This message will be posted in the Ingame Chat if available (optional)
 </code></pre>
 
 <p>Response:</p>

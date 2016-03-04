@@ -75,6 +75,8 @@
                 
                     <li><a class="toctree-l4" href="#http-status-codes">HTTP Status Codes</a></li>
                 
+                    <li><a class="toctree-l4" href="#i18n-multilingual">I18n (Multilingual)</a></li>
+                
                     <li><a class="toctree-l4" href="#json-responses">JSON Responses</a></li>
                 
                     <li><a class="toctree-l4" href="#special-thanks">Special thanks</a></li>
@@ -231,6 +233,28 @@
     </ul>
 <li>
           
+            <li>
+    <ul class="subnav">
+    <li><span>Voiceserver Resources</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="resources/voiceservers/global/">Global</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="resources/voiceservers/backup/">Backup</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
         </ul>
       </div>
       &nbsp;
@@ -327,6 +351,29 @@ X-RateLimit-Reset: 1426202077
 </tr>
 </tbody>
 </table>
+<h2 id="i18n-multilingual">I18n (Multilingual)</h2>
+<p>The API supports multi-language for success and error messages. It automatically takes the language of the user access token.
+You can optionally pass the "locale" GET parameter on each request to overwrite the user setting.</p>
+<p>If no access token and locale parameter is provided, it falls back to english.</p>
+<p>The following languages are currently supported:</p>
+<table>
+<thead>
+<tr>
+<th>Locale Code</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>en</td>
+<td>English</td>
+</tr>
+<tr>
+<td>de</td>
+<td>German</td>
+</tr>
+</tbody>
+</table>
 <h2 id="json-responses">JSON Responses</h2>
 <p>The API uses the <a href="http://labs.omniti.com/labs/jsend">jsend</a> standard for JSON responses.</p>
 <p>This responses are possible:</p>
@@ -416,5 +463,5 @@ X-RateLimit-Reset: 1426202077
 
 <!--
 MkDocs version : 0.15.0
-Build Date UTC : 2016-01-21 14:18:27.925175
+Build Date UTC : 2016-03-04 09:53:34.647826
 -->
