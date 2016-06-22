@@ -8,7 +8,7 @@
   
   <meta name="author" content="marbis GmbH">
   
-  <title>Backup - Nitrapi Documentation</title>
+  <title>Mumble - Nitrapi Documentation</title>
   
 
   <link rel="shortcut icon" href="../../../img/favicon.ico">
@@ -24,9 +24,9 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Backup";
-    var mkdocs_page_input_path = "resources/voiceservers/backup.md";
-    var mkdocs_page_url = "/resources/voiceservers/backup/";
+    var mkdocs_page_name = "Mumble";
+    var mkdocs_page_input_path = "resources/order/mumble.md";
+    var mkdocs_page_url = "/resources/order/mumble/";
   </script>
   
   <script src="../../../js/jquery-2.1.1.min.js"></script>
@@ -141,63 +141,79 @@
         
             
     <li class="toctree-l1 ">
-        <a class="" href="../../order/information/">Information</a>
+        <a class="" href="../information/">Information</a>
         
     </li>
 
         
             
     <li class="toctree-l1 ">
-        <a class="" href="../../order/payment/">Payment</a>
+        <a class="" href="../payment/">Payment</a>
         
     </li>
 
         
             
     <li class="toctree-l1 ">
-        <a class="" href="../../order/gameserver/">Gameserver</a>
+        <a class="" href="../gameserver/">Gameserver</a>
         
     </li>
 
         
             
     <li class="toctree-l1 ">
-        <a class="" href="../../order/teamspeak3/">Teamspeak 3</a>
+        <a class="" href="../teamspeak3/">Teamspeak 3</a>
         
     </li>
 
         
             
     <li class="toctree-l1 ">
-        <a class="" href="../../order/webspace/">Webspace</a>
+        <a class="" href="../webspace/">Webspace</a>
         
     </li>
 
         
             
     <li class="toctree-l1 ">
-        <a class="" href="../../order/musicbot/">Musicbot</a>
+        <a class="" href="../musicbot/">Musicbot</a>
         
     </li>
 
         
             
     <li class="toctree-l1 ">
-        <a class="" href="../../order/ventrilo/">Ventrilo</a>
+        <a class="" href="../ventrilo/">Ventrilo</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 current">
+        <a class="current" href="./">Mumble</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#pricing-information">Pricing Information</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#order-mumble">Order Mumble</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#extend-mumble">Extend Mumble</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#switch-mumble">Switch Mumble</a></li>
+                
+            
+            </ul>
         
     </li>
 
         
             
     <li class="toctree-l1 ">
-        <a class="" href="../../order/mumble/">Mumble</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../../order/bouncer/">Bouncer</a>
+        <a class="" href="../bouncer/">Bouncer</a>
         
     </li>
 
@@ -312,33 +328,14 @@
         
             
     <li class="toctree-l1 ">
-        <a class="" href="../global/">Global</a>
+        <a class="" href="../../voiceservers/global/">Global</a>
         
     </li>
 
         
             
-    <li class="toctree-l1 current">
-        <a class="current" href="./">Backup</a>
-        
-            <ul>
-            
-                <li class="toctree-l3"><a href="#voiceserversbackup">/voiceservers/backup</a></li>
-                
-            
-                <li class="toctree-l3"><a href="#voiceserversbackupupload">/voiceservers/backup/upload</a></li>
-                
-            
-                <li class="toctree-l3"><a href="#voiceserversbackupid">/voiceservers/backup/:id</a></li>
-                
-            
-                <li class="toctree-l3"><a href="#voiceserversbackupid_1">/voiceservers/backup/:id</a></li>
-                
-            
-                <li class="toctree-l3"><a href="#voiceserversbackupidrestore">/voiceservers/backup/:id/restore</a></li>
-                
-            
-            </ul>
+    <li class="toctree-l1 ">
+        <a class="" href="../../voiceservers/backup/">Backup</a>
         
     </li>
 
@@ -368,11 +365,11 @@
     
       
         
-          <li>Voiceserver Resources &raquo;</li>
+          <li>Order Resources &raquo;</li>
         
       
     
-    <li>Backup</li>
+    <li>Mumble</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -382,86 +379,185 @@
           <div role="main">
             <div class="section">
               
-                <p>This are backup commands are for voiceservers.</p>
-<p>The available snapshots will be listed at the /voiceservers endpoint.</p>
-<p><strong>Note:</strong> Currently only supported by Teamspeak 3.</p>
-<h2 id="voiceserversbackup">/voiceservers/backup</h2>
-<p>This command creates a new Voiceserver snapshot.
-The snapshot can is available for downloaded or it can be restored.</p>
+                <h2 id="pricing-information">Pricing Information</h2>
+<p>Please take a look into the <a href="../../../resources/order/information/#pricing-structure-parts">parts pricing</a> system for more information how to calculate the price for this product.</p>
+<p><strong>Example:</strong></p>
+<p>If you want to order a Mumble Server for 30 days with 8 you need to pay 1,60€.</p>
 <p>Request:</p>
-<pre><code>POST /services/&lt;id&gt;/voiceservers/backup?access_token=&lt;access_token&gt;
+<pre><code>GET /order/pricing/mumble?access_token=&lt;access_token&gt;
+</code></pre>
+
+<p>Parameters:</p>
+<pre><code>location_id=&lt;location_id&gt;
+sale_service=&lt;service_id&gt; (optional, service id of service which needs to be switched)
 </code></pre>
 
 <p>Response:</p>
-<pre><code class="json">{  
+<pre><code>{  
    &quot;status&quot;:&quot;success&quot;,
    &quot;data&quot;:{  
-      &quot;snapshot&quot;:{  
-         &quot;id&quot;:1
+      &quot;prices&quot;:{  
+         &quot;rental_times&quot;:[  
+            720,
+            2160,
+            8760
+         ],
+         &quot;parts&quot;:[  
+            {  
+               &quot;type&quot;:&quot;slot&quot;,
+               &quot;min_count&quot;:4,
+               &quot;max_count&quot;:256,
+               &quot;optional&quot;:false,
+               &quot;steps&quot;:[  
+                  4,
+                  8
+               ],
+               &quot;step_names&quot;:null,
+               &quot;rental_times&quot;:[  
+                  {  
+                     &quot;hours&quot;:720,
+                     &quot;prices&quot;:[  
+                        {  
+                           &quot;count&quot;:4,
+                           &quot;price&quot;:80
+                        },
+                        {  
+                           &quot;count&quot;:8,
+                           &quot;price&quot;:160
+                        }
+                     ]
+                  },
+                  {  
+                     &quot;hours&quot;:2160,
+                     &quot;prices&quot;:[  
+                        {  
+                           &quot;count&quot;:4,
+                           &quot;price&quot;:240
+                        },
+                        {  
+                           &quot;count&quot;:8,
+                           &quot;price&quot;:480
+                        }
+                     ]
+                  },
+                  {  
+                     &quot;hours&quot;:8760,
+                     &quot;prices&quot;:[  
+                        {  
+                           &quot;count&quot;:4,
+                           &quot;price&quot;:800
+                        },
+                        {  
+                           &quot;count&quot;:8,
+                           &quot;price&quot;:1600
+                        }
+                     ]
+                  }
+               ]
+            }
+         ]
       }
    }
 }
 </code></pre>
 
-<h2 id="voiceserversbackupupload">/voiceservers/backup/upload</h2>
-<p>This endpoint uploads a new Voiceserver Backup and returns the snapshot id.</p>
+<h2 id="order-mumble">Order Mumble</h2>
 <p>Request:</p>
-<pre><code>POST /services/&lt;id&gt;/voiceservers/backup/upload?access_token=&lt;access_token&gt;
+<pre><code>POST /order/order/mumble?access_token=&lt;access_token&gt;
 </code></pre>
 
-<p>Request Body:</p>
-<pre><code>&lt;the compressed and encrypted teamspeak 3 file&gt;
+<p>POST Parameters:</p>
+<pre><code>location_id=2 (Location id from the location list)
+price=160 (Calculated price from the pricing call) 
+rental_time=720 (Rental time in hours)
+parts[slot]=8
 </code></pre>
 
 <p>Response:</p>
-<pre><code class="json">{  
+<pre><code>{
+
+    &quot;status&quot;: &quot;success&quot;,
+    &quot;message&quot;: &quot;Order has been done with the price of €1.60.&quot;
+
+}
+</code></pre>
+
+<h2 id="extend-mumble">Extend Mumble</h2>
+<p><strong>Pricing list for service extension</strong></p>
+<p>Request:</p>
+<pre><code>GET /order/pricing/mumble?access_token=&lt;access_token&gt;
+</code></pre>
+
+<p>Parameters:</p>
+<pre><code>method=extend
+service_id=1 (Service id of the service who needs to be extended)
+</code></pre>
+
+<p>Response:</p>
+<pre><code>{  
    &quot;status&quot;:&quot;success&quot;,
    &quot;data&quot;:{  
-      &quot;snapshot&quot;:{  
-         &quot;id&quot;:2
+      &quot;extend&quot;:{  
+         &quot;rental_times&quot;:[  
+            72,
+            720,
+            2160,
+            8760
+         ],
+         &quot;prices&quot;:{  
+            &quot;72&quot;:325,
+            &quot;720&quot;:1300,
+            &quot;2160&quot;:3500,
+            &quot;8760&quot;:13000
+         }
       }
    }
 }
 </code></pre>
 
-<h2 id="voiceserversbackupid">/voiceservers/backup/:id</h2>
-<p>Returns the Snapshot in a base64 encoded format.</p>
+<p><strong>Process service extension</strong></p>
 <p>Request:</p>
-<pre><code>GET /services/&lt;id&gt;/voiceservers/backup/&lt;id&gt;?access_token=&lt;access_token&gt;
+<pre><code>POST /order/order/mumble?access_token=&lt;access_token&gt;
+</code></pre>
+
+<p>POST Parameters:</p>
+<pre><code>price=160 (Calculated price from the pricing call) 
+rental_time=720 (Extension time in hours)
+method=extend
+service_id=1 (Service id of the service who needs to be extended)
 </code></pre>
 
 <p>Response:</p>
-<pre><code class="json">{  
-   &quot;status&quot;:&quot;success&quot;,
-   &quot;data&quot;:{  
-      &quot;snapshot&quot;:&quot;eJzsvVl7qkzXNXpef4WD0==&quot;
-   }
+<pre><code>{
+
+    &quot;status&quot;: &quot;success&quot;,
+    &quot;message&quot;: &quot;Order has been done with the price of €1.60.&quot;
+
 }
 </code></pre>
 
-<h2 id="voiceserversbackupid_1">/voiceservers/backup/:id</h2>
-<p>Deletes the specific snapshot from the backup system.</p>
+<h2 id="switch-mumble">Switch Mumble</h2>
+<p>If you switch a old service you need to provide the correct price, please check the pricing list with sale_service parameter.</p>
+<p><strong>Important:</strong> If the sale price is higher then the price of the new service, the difference will be added to your account as credit.</p>
 <p>Request:</p>
-<pre><code>DELETE /services/&lt;id&gt;/voiceservers/backup/&lt;id&gt;?access_token=&lt;access_token&gt;
+<pre><code>POST /order/order/mumble?access_token=&lt;access_token&gt;
+</code></pre>
+
+<p>POST Parameters:</p>
+<pre><code>location_id=2 (Location id from the location list)
+price=-80 (Calculated price from the pricing call) 
+rental_time=720 (Rental time in hours)
+parts[slot]=8
+method=switch
+service_id=1 (Service id of the service who needs to switched.)
 </code></pre>
 
 <p>Response:</p>
-<pre><code class="json">{  
-   &quot;status&quot;:&quot;success&quot;,
-   &quot;message&quot;:&quot;The Voiceserver Backup has been deleted.&quot;
-}
-</code></pre>
+<pre><code>{
 
-<h2 id="voiceserversbackupidrestore">/voiceservers/backup/:id/restore</h2>
-<p>Deployes the specific snapshot to the Voiceserver and restarts it.</p>
-<p>Request:</p>
-<pre><code>POST /services/&lt;id&gt;/voiceservers/backup/&lt;id&gt;/restore?access_token=&lt;access_token&gt;
-</code></pre>
+    &quot;status&quot;: &quot;success&quot;,
+    &quot;message&quot;: &quot;Order has been done with the price of -0.80€.&quot;
 
-<p>Response:</p>
-<pre><code class="json">{  
-   &quot;status&quot;:&quot;success&quot;,
-   &quot;message&quot;:&quot;The Voiceserver Backup has been restored.&quot;
 }
 </code></pre>
               
@@ -471,8 +567,10 @@ The snapshot can is available for downloaded or it can be restored.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
+        <a href="../bouncer/" class="btn btn-neutral float-right" title="Bouncer">Next <span class="icon icon-circle-arrow-right"></span></a>
       
-        <a href="../global/" class="btn btn-neutral" title="Global"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+        <a href="../ventrilo/" class="btn btn-neutral" title="Ventrilo"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -498,8 +596,10 @@ The snapshot can is available for downloaded or it can be restored.</p>
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href="../global/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../ventrilo/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
+      
+        <span style="margin-left: 15px"><a href="../bouncer/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>

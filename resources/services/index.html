@@ -19,6 +19,7 @@
   <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
   <link rel="stylesheet" href="../../css/highlight.css">
+  <link href="../../extra.css" rel="stylesheet">
 
   
   <script>
@@ -133,6 +134,84 @@
     </li>
 
         
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../gameserver/">Gameserver</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Order Resources</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../order/information/">Information</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../order/payment/">Payment</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../order/gameserver/">Gameserver</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../order/teamspeak3/">Teamspeak 3</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../order/webspace/">Webspace</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../order/musicbot/">Musicbot</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../order/ventrilo/">Ventrilo</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../order/mumble/">Mumble</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../order/bouncer/">Bouncer</a>
+        
+    </li>
+
+        
     </ul>
 <li>
           
@@ -179,6 +258,20 @@
             
     <li class="toctree-l1 ">
         <a class="" href="../gameservers/app_server/">App Server</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../gameservers/addons/">Addons</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../gameservers/plugins/">Plugins</a>
         
     </li>
 
@@ -294,6 +387,7 @@
       &quot;services&quot;:[
          {
             &quot;id&quot;:3,
+            &quot;status&quot;:&quot;active&quot;,
             &quot;websocket_token&quot;:&quot;b05ac3d5d71a8858fca3011a8c179f1d9ec5ab41&quot;,
             &quot;user_id&quot;:2,
             &quot;type&quot;:&quot;gameserver&quot;,
@@ -311,6 +405,7 @@
          },
          {
             &quot;id&quot;:6,
+            &quot;status&quot;:&quot;active&quot;,
             &quot;websocket_token&quot;:&quot;49232226bcf1568bbc2b659325a3339d3af57fea&quot;,
             &quot;user_id&quot;:1,
             &quot;type&quot;:&quot;gameserver&quot;,
@@ -371,6 +466,14 @@
 <li>ROLE_WEBINTERFACE_SETTINGS_READ: Has access to server settings</li>
 <li>ROLE_WEBINTERFACE_SETTINGS_WRITE: Can change server settings</li>
 </ul>
+<p><strong>Available status codes</strong></p>
+<ul>
+<li>active: The service is active and useable</li>
+<li>installing: The service is currently installing</li>
+<li>suspended: The service is suspended and can be reactivated</li>
+<li>adminlocked: The service is admin locked, please contact support.</li>
+<li>adminlocked_suspended: The service is admin locked and suspended.</li>
+</ul>
 <h2 id="servicesid">/services/:id</h2>
 <p>Get all service informations by a specific service id.</p>
 <p>Request:</p>
@@ -383,6 +486,7 @@
    &quot;data&quot;:{
       &quot;service&quot;:{
          &quot;id&quot;:3,
+         &quot;status&quot;:&quot;active&quot;,
          &quot;websocket_token&quot;:&quot;b05ac3d5d71a8858fca3011a8c179f1d9ec5ab41&quot;,
          &quot;user_id&quot;:2,
          &quot;username&quot;:&quot;ni2_2&quot;,
