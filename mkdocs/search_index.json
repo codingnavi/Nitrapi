@@ -794,6 +794,16 @@
             "location": "/resources/voiceservers/backup/#voiceserversbackupidrestore",
             "text": "Deployes the specific snapshot to the Voiceserver and restarts it.  Request:  POST /services/<id>/voiceservers/backup/<id>/restore?access_token=<access_token>  Response:  {  \n   \"status\":\"success\",\n   \"message\":\"The Voiceserver Backup has been restored.\"\n}",
             "title": "/voiceservers/backup/:id/restore"
+        },
+        {
+            "location": "/resources/twitch/",
+            "text": "If you are a Twitch Streamer you can use our Twitch API Endpoint to check if a player on your server is a follower or subscriber.\nThis feature can be used for subscriber or follower only servers.\n\n\n/twitch/allowed_connect\n\n\nChecks if a specified player follows our subscribed your Twitch channel.\n\n\nRequest:\n\n\nGET /twitch/allowed_connect?access_token=<access_token>\n\n\n\n\nGET Parameters:\n\n\naccount_type=<steam|battlelog_pc|minecraft>\naccount_id=<steam_id|battlelog_id|minecraft_uuid>\n\n\n\n\nResponse:\n\n\n{\n   \"status\":\"success\",\n   \"data\":{\n      \"streamer\":\"gronkh\",\n      \"user\":{\n         \"twitch_name\":\"moobot\",\n         \"type\":\"minecraft\",\n         \"id\":\"myuuid\"\n       },\n       \"subscribed\":true,\n       \"follows\":true\n      }\n   }\n}",
+            "title": "Twitch Resource"
+        },
+        {
+            "location": "/resources/twitch/#twitchallowed_connect",
+            "text": "Checks if a specified player follows our subscribed your Twitch channel.  Request:  GET /twitch/allowed_connect?access_token=<access_token>  GET Parameters:  account_type=<steam|battlelog_pc|minecraft>\naccount_id=<steam_id|battlelog_id|minecraft_uuid>  Response:  {\n   \"status\":\"success\",\n   \"data\":{\n      \"streamer\":\"gronkh\",\n      \"user\":{\n         \"twitch_name\":\"moobot\",\n         \"type\":\"minecraft\",\n         \"id\":\"myuuid\"\n       },\n       \"subscribed\":true,\n       \"follows\":true\n      }\n   }\n}",
+            "title": "/twitch/allowed_connect"
         }
     ]
 }
