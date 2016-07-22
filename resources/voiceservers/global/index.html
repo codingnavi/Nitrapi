@@ -316,19 +316,19 @@
         
             <ul>
             
-                <li class="toctree-l3"><a href="#voiceservers">/voiceservers</a></li>
+                <li class="toctree-l3"><a href="#get-voiceservers">GET /voiceservers</a></li>
                 
             
-                <li class="toctree-l3"><a href="#voiceserversrestart">/voiceservers/restart</a></li>
+                <li class="toctree-l3"><a href="#post-voiceserversrestart">POST /voiceservers/restart</a></li>
                 
             
-                <li class="toctree-l3"><a href="#voiceserversstop">/voiceservers/stop</a></li>
+                <li class="toctree-l3"><a href="#post-voiceserversstop">POST /voiceservers/stop</a></li>
                 
             
-                <li class="toctree-l3"><a href="#voiceserversreinstall">/voiceservers/reinstall</a></li>
+                <li class="toctree-l3"><a href="#post-voiceserversreinstall">POST /voiceservers/reinstall</a></li>
                 
             
-                <li class="toctree-l3"><a href="#voiceserversupdate">/voiceservers/update</a></li>
+                <li class="toctree-l3"><a href="#post-voiceserversupdate">POST /voiceservers/update</a></li>
                 
             
             </ul>
@@ -344,13 +344,6 @@
 
         
     </ul>
-<li>
-          
-            <li>
-    <li class="toctree-l1 ">
-        <a class="" href="../../twitch/">Twitch Resource</a>
-        
-    </li>
 <li>
           
         </ul>
@@ -390,7 +383,7 @@
             <div class="section">
               
                 <p>This are global commands are for voiceservers.</p>
-<h2 id="voiceservers">/voiceservers</h2>
+<h2 id="get-voiceservers">GET /voiceservers</h2>
 <p>This command returns all voiceserver information which are available.</p>
 <p>Under "specific" you can find specific information depending on your Voiceserver type.</p>
 <p>Request:</p>
@@ -473,7 +466,7 @@
 }
 </code></pre>
 
-<h2 id="voiceserversrestart">/voiceservers/restart</h2>
+<h2 id="post-voiceserversrestart">POST /voiceservers/restart</h2>
 <p>Starts or restarts the voiceserver. </p>
 <p>Request:</p>
 <pre><code>POST /services/&lt;id&gt;/voiceservers/restart?access_token=&lt;access_token&gt;
@@ -486,7 +479,7 @@
 }
 </code></pre>
 
-<h2 id="voiceserversstop">/voiceservers/stop</h2>
+<h2 id="post-voiceserversstop">POST /voiceservers/stop</h2>
 <p>Stopps the voiceserver. 
 Notice: Not supported by Mumble.</p>
 <p>Request:</p>
@@ -500,7 +493,7 @@ Notice: Not supported by Mumble.</p>
 }
 </code></pre>
 
-<h2 id="voiceserversreinstall">/voiceservers/reinstall</h2>
+<h2 id="post-voiceserversreinstall">POST /voiceservers/reinstall</h2>
 <p>Reinstalls the voiceserver. </p>
 <p>Request:</p>
 <pre><code>POST /services/&lt;id&gt;/voiceservers/reinstall?access_token=&lt;access_token&gt;
@@ -513,7 +506,7 @@ Notice: Not supported by Mumble.</p>
 }
 </code></pre>
 
-<h2 id="voiceserversupdate">/voiceservers/update</h2>
+<h2 id="post-voiceserversupdate">POST /voiceservers/update</h2>
 <p>Updates settings on the voiceserver. 
 The available setting keys depending on your Voiceserver type.</p>
 <table>

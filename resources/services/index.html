@@ -109,10 +109,16 @@
         
             <ul>
             
-                <li class="toctree-l3"><a href="#services">/services</a></li>
+                <li class="toctree-l3"><a href="#get-services">GET /services</a></li>
                 
             
-                <li class="toctree-l3"><a href="#servicesid">/services/:id</a></li>
+                <li class="toctree-l3"><a href="#get-servicesid">GET /services/:id</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#get-servicesidauto_extend">GET /services/:id/auto_extend</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#post-servicesidauto_extend">POST /services/:id/auto_extend</a></li>
                 
             
             </ul>
@@ -337,13 +343,6 @@
     </ul>
 <li>
           
-            <li>
-    <li class="toctree-l1 ">
-        <a class="" href="../twitch/">Twitch Resource</a>
-        
-    </li>
-<li>
-          
         </ul>
       </div>
       &nbsp;
@@ -381,7 +380,7 @@
             <div class="section">
               
                 <p>Services are your rented products. This resources are very terrific. Be careful with your services, all actions are definite.</p>
-<h2 id="services">/services</h2>
+<h2 id="get-services">GET /services</h2>
 <p>Get a full list with all rented services and/or services with subuser permissions.</p>
 <p>Request:</p>
 <pre><code>GET /services?access_token=&lt;access_token&gt;
@@ -397,6 +396,7 @@
             &quot;status&quot;:&quot;active&quot;,
             &quot;websocket_token&quot;:&quot;b05ac3d5d71a8858fca3011a8c179f1d9ec5ab41&quot;,
             &quot;user_id&quot;:2,
+            &quot;auto_extension&quot;:false,
             &quot;type&quot;:&quot;gameserver&quot;,
             &quot;details&quot;:{  
                &quot;address&quot;:&quot;10.10.0.6:27015&quot;,
@@ -415,6 +415,7 @@
             &quot;status&quot;:&quot;active&quot;,
             &quot;websocket_token&quot;:&quot;49232226bcf1568bbc2b659325a3339d3af57fea&quot;,
             &quot;user_id&quot;:1,
+            &quot;auto_extension&quot;:false,
             &quot;type&quot;:&quot;gameserver&quot;,
             &quot;details&quot;:{  
                &quot;address&quot;:&quot;10.10.0.7:27015&quot;,
@@ -481,7 +482,7 @@
 <li>adminlocked: The service is admin locked, please contact support.</li>
 <li>adminlocked_suspended: The service is admin locked and suspended.</li>
 </ul>
-<h2 id="servicesid">/services/:id</h2>
+<h2 id="get-servicesid">GET /services/:id</h2>
 <p>Get all service informations by a specific service id.</p>
 <p>Request:</p>
 <pre><code>GET /services/&lt;id&gt;?access_token=&lt;access_token&gt;
@@ -497,6 +498,7 @@
          &quot;websocket_token&quot;:&quot;b05ac3d5d71a8858fca3011a8c179f1d9ec5ab41&quot;,
          &quot;user_id&quot;:2,
          &quot;username&quot;:&quot;ni2_2&quot;,
+         &quot;auto_extension&quot;:false,
          &quot;type&quot;:&quot;gameserver&quot;,
          &quot;details&quot;:{  
             &quot;address&quot;:&quot;10.10.0.6:27015&quot;,
@@ -510,6 +512,96 @@
          &quot;delete_date&quot;:1425652969
       }
    }
+}
+</code></pre>
+
+<h2 id="get-servicesidauto_extend">GET /services/:id/auto_extend</h2>
+<p>Returns auto extension information and status.</p>
+<p>Request:</p>
+<pre><code>GET /services/&lt;id&gt;/auto_extend?access_token=&lt;access_token&gt;
+</code></pre>
+
+<p>Response:</p>
+<pre><code class="json">{  
+   &quot;status&quot;:&quot;success&quot;,
+   &quot;data&quot;:{  
+      &quot;auto_extend&quot;:[  
+         {  
+            &quot;id&quot;:0,
+            &quot;name&quot;:&quot;NONE&quot;,
+            &quot;active&quot;:true,
+            &quot;description&quot;:&quot;Disable automatic extension&quot;,
+            &quot;available&quot;:true,
+            &quot;payment_method&quot;:null,
+            &quot;rental_times&quot;:{  
+               &quot;72&quot;:300,
+               &quot;720&quot;:1200,
+               &quot;2160&quot;:3200,
+               &quot;8760&quot;:12000
+            }
+         },
+         {  
+            &quot;id&quot;:1,
+            &quot;name&quot;:&quot;CREDITS_ONLY&quot;,
+            &quot;active&quot;:false,
+            &quot;description&quot;:&quot;Extend with credits&quot;,
+            &quot;available&quot;:true,
+            &quot;payment_method&quot;:null,
+            &quot;rental_times&quot;:{  
+               &quot;72&quot;:300,
+               &quot;720&quot;:1200,
+               &quot;2160&quot;:3200,
+               &quot;8760&quot;:12000
+            }
+         },
+         {  
+            &quot;id&quot;:2,
+            &quot;name&quot;:&quot;PAYPAL_CREDITS_FIRST&quot;,
+            &quot;active&quot;:false,
+            &quot;description&quot;:&quot;Extend with Paypal, use credits first&quot;,
+            &quot;available&quot;:true,
+            &quot;payment_method&quot;:&quot;gc_paypal&quot;,
+            &quot;rental_times&quot;:{  
+               &quot;72&quot;:300,
+               &quot;720&quot;:1200,
+               &quot;2160&quot;:3200,
+               &quot;8760&quot;:12000
+            }
+         },
+         {  
+            &quot;id&quot;:52,
+            &quot;name&quot;:&quot;PAYPAL&quot;,
+            &quot;active&quot;:false,
+            &quot;description&quot;:&quot;Extend with Paypal&quot;,
+            &quot;available&quot;:true,
+            &quot;payment_method&quot;:&quot;gc_paypal&quot;,
+            &quot;rental_times&quot;:{  
+               &quot;72&quot;:300,
+               &quot;720&quot;:1200,
+               &quot;2160&quot;:3200,
+               &quot;8760&quot;:12000
+            }
+         }
+      ]
+   }
+}
+</code></pre>
+
+<h2 id="post-servicesidauto_extend">POST /services/:id/auto_extend</h2>
+<p>Get all service informations by a specific service id.</p>
+<p>Request:</p>
+<pre><code>POST /services/&lt;id&gt;/auto_extend?access_token=&lt;access_token&gt;
+</code></pre>
+
+<p>POST Parameters:</p>
+<pre><code>auto_extend_id=0 (0 means disabled otherwise select id) 
+rental_time=720 (Selected rental time in hours) 
+</code></pre>
+
+<p>Response:</p>
+<pre><code class="json">{  
+   &quot;status&quot;:&quot;success&quot;,
+   &quot;message&quot;:&quot;The auto extension has been disabled.&quot;
 }
 </code></pre>
               

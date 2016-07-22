@@ -230,16 +230,16 @@
         
             <ul>
             
-                <li class="toctree-l3"><a href="#gameserverstasks">/gameservers/tasks</a></li>
+                <li class="toctree-l3"><a href="#get-gameserverstasks">GET /gameservers/tasks</a></li>
                 
             
-                <li class="toctree-l3"><a href="#gameserverstasks_1">/gameservers/tasks</a></li>
+                <li class="toctree-l3"><a href="#post-gameserverstasks">POST /gameservers/tasks</a></li>
                 
             
-                <li class="toctree-l3"><a href="#gameserverstasksid">/gameservers/tasks/:id</a></li>
+                <li class="toctree-l3"><a href="#post-gameserverstasksid">POST /gameservers/tasks/:id</a></li>
                 
             
-                <li class="toctree-l3"><a href="#gameserverstasksid_1">/gameservers/tasks/:id</a></li>
+                <li class="toctree-l3"><a href="#delete-gameserverstasksid">DELETE /gameservers/tasks/:id</a></li>
                 
             
             </ul>
@@ -343,13 +343,6 @@
     </ul>
 <li>
           
-            <li>
-    <li class="toctree-l1 ">
-        <a class="" href="../../twitch/">Twitch Resource</a>
-        
-    </li>
-<li>
-          
         </ul>
       </div>
       &nbsp;
@@ -415,7 +408,7 @@
 </tr>
 </tbody>
 </table>
-<h2 id="gameserverstasks">/gameservers/tasks</h2>
+<h2 id="get-gameserverstasks">GET /gameservers/tasks</h2>
 <p>This command returns all available scheduled tasks for this service.</p>
 <p>Request:</p>
 <pre><code>GET /services/&lt;id&gt;/gameservers/tasks?access_token=&lt;access_token&gt;
@@ -444,7 +437,7 @@
 }
 </code></pre>
 
-<h2 id="gameserverstasks_1">/gameservers/tasks</h2>
+<h2 id="post-gameserverstasks">POST /gameservers/tasks</h2>
 <p>Creates a new scheduled task for the service. </p>
 <p>Request:</p>
 <pre><code>POST /services/&lt;id&gt;/gameservers/tasks?access_token=&lt;access_token&gt;
@@ -467,7 +460,7 @@ action_data=&quot;Server will be restarted now...&quot; (optional)
 }
 </code></pre>
 
-<h2 id="gameserverstasksid">/gameservers/tasks/:id</h2>
+<h2 id="post-gameserverstasksid">POST /gameservers/tasks/:id</h2>
 <p>Updates a existing scheduled task for the service.</p>
 <p>Request:</p>
 <pre><code>POST /services/&lt;id&gt;/gameservers/tasks/&lt;id&gt;?access_token=&lt;access_token&gt;
@@ -484,7 +477,7 @@ action_data=&quot;Server will be restarted now...&quot; (optional)
 }
 </code></pre>
 
-<h2 id="gameserverstasksid_1">/gameservers/tasks/:id</h2>
+<h2 id="delete-gameserverstasksid">DELETE /gameservers/tasks/:id</h2>
 <p>Deletes the specific scheduled task for the service.</p>
 <p>Request:</p>
 <pre><code>DELETE /services/&lt;id&gt;/gameservers/tasks/&lt;id&gt;?access_token=&lt;access_token&gt;

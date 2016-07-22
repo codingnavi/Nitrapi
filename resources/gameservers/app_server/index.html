@@ -251,10 +251,10 @@
         
             <ul>
             
-                <li class="toctree-l3"><a href="#gameserversapp_server">/gameservers/app_server</a></li>
+                <li class="toctree-l3"><a href="#get-gameserversapp_server">GET /gameservers/app_server</a></li>
                 
             
-                <li class="toctree-l3"><a href="#gameserversapp_servercommand">/gameservers/app_server/command</a></li>
+                <li class="toctree-l3"><a href="#post-gameserversapp_servercommand">POST /gameservers/app_server/command</a></li>
                 
             
             </ul>
@@ -337,13 +337,6 @@
     </ul>
 <li>
           
-            <li>
-    <li class="toctree-l1 ">
-        <a class="" href="../../twitch/">Twitch Resource</a>
-        
-    </li>
-<li>
-          
         </ul>
       </div>
       &nbsp;
@@ -383,7 +376,7 @@
                 <p>This is the game server app server documentation.</p>
 <p>The app server provides you access to the stdin of most linux games. 
 It also forwards the stdout to the web socket.</p>
-<h2 id="gameserversapp_server">/gameservers/app_server</h2>
+<h2 id="get-gameserversapp_server">GET /gameservers/app_server</h2>
 <p>This command actives the stdout forward to the web socket for 3 minutes.
 It also forwards the last 150 output lines to the web socket.</p>
 <p>Request:</p>
@@ -397,7 +390,7 @@ It also forwards the last 150 output lines to the web socket.</p>
 }
 </code></pre>
 
-<h2 id="gameserversapp_servercommand">/gameservers/app_server/command</h2>
+<h2 id="post-gameserversapp_servercommand">POST /gameservers/app_server/command</h2>
 <p>This sends a specific command directly to the stdin of the game server.
 The output will be send to the web socket if its activated.</p>
 <p>Request:</p>

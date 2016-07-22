@@ -323,19 +323,19 @@
         
             <ul>
             
-                <li class="toctree-l3"><a href="#voiceserversbackup">/voiceservers/backup</a></li>
+                <li class="toctree-l3"><a href="#post-voiceserversbackup">POST /voiceservers/backup</a></li>
                 
             
-                <li class="toctree-l3"><a href="#voiceserversbackupupload">/voiceservers/backup/upload</a></li>
+                <li class="toctree-l3"><a href="#post-voiceserversbackupupload">POST /voiceservers/backup/upload</a></li>
                 
             
-                <li class="toctree-l3"><a href="#voiceserversbackupid">/voiceservers/backup/:id</a></li>
+                <li class="toctree-l3"><a href="#get-voiceserversbackupid">GET /voiceservers/backup/:id</a></li>
                 
             
-                <li class="toctree-l3"><a href="#voiceserversbackupid_1">/voiceservers/backup/:id</a></li>
+                <li class="toctree-l3"><a href="#delete-voiceserversbackupid">DELETE /voiceservers/backup/:id</a></li>
                 
             
-                <li class="toctree-l3"><a href="#voiceserversbackupidrestore">/voiceservers/backup/:id/restore</a></li>
+                <li class="toctree-l3"><a href="#post-voiceserversbackupidrestore">POST /voiceservers/backup/:id/restore</a></li>
                 
             
             </ul>
@@ -344,13 +344,6 @@
 
         
     </ul>
-<li>
-          
-            <li>
-    <li class="toctree-l1 ">
-        <a class="" href="../../twitch/">Twitch Resource</a>
-        
-    </li>
 <li>
           
         </ul>
@@ -392,7 +385,7 @@
                 <p>This are backup commands are for voiceservers.</p>
 <p>The available snapshots will be listed at the /voiceservers endpoint.</p>
 <p><strong>Note:</strong> Currently only supported by Teamspeak 3.</p>
-<h2 id="voiceserversbackup">/voiceservers/backup</h2>
+<h2 id="post-voiceserversbackup">POST /voiceservers/backup</h2>
 <p>This command creates a new Voiceserver snapshot.
 The snapshot can is available for downloaded or it can be restored.</p>
 <p>Request:</p>
@@ -410,7 +403,7 @@ The snapshot can is available for downloaded or it can be restored.</p>
 }
 </code></pre>
 
-<h2 id="voiceserversbackupupload">/voiceservers/backup/upload</h2>
+<h2 id="post-voiceserversbackupupload">POST /voiceservers/backup/upload</h2>
 <p>This endpoint uploads a new Voiceserver Backup and returns the snapshot id.</p>
 <p>Request:</p>
 <pre><code>POST /services/&lt;id&gt;/voiceservers/backup/upload?access_token=&lt;access_token&gt;
@@ -431,7 +424,7 @@ The snapshot can is available for downloaded or it can be restored.</p>
 }
 </code></pre>
 
-<h2 id="voiceserversbackupid">/voiceservers/backup/:id</h2>
+<h2 id="get-voiceserversbackupid">GET /voiceservers/backup/:id</h2>
 <p>Returns the Snapshot in a base64 encoded format.</p>
 <p>Request:</p>
 <pre><code>GET /services/&lt;id&gt;/voiceservers/backup/&lt;id&gt;?access_token=&lt;access_token&gt;
@@ -446,7 +439,7 @@ The snapshot can is available for downloaded or it can be restored.</p>
 }
 </code></pre>
 
-<h2 id="voiceserversbackupid_1">/voiceservers/backup/:id</h2>
+<h2 id="delete-voiceserversbackupid">DELETE /voiceservers/backup/:id</h2>
 <p>Deletes the specific snapshot from the backup system.</p>
 <p>Request:</p>
 <pre><code>DELETE /services/&lt;id&gt;/voiceservers/backup/&lt;id&gt;?access_token=&lt;access_token&gt;
@@ -459,7 +452,7 @@ The snapshot can is available for downloaded or it can be restored.</p>
 }
 </code></pre>
 
-<h2 id="voiceserversbackupidrestore">/voiceservers/backup/:id/restore</h2>
+<h2 id="post-voiceserversbackupidrestore">POST /voiceservers/backup/:id/restore</h2>
 <p>Deployes the specific snapshot to the Voiceserver and restarts it.</p>
 <p>Request:</p>
 <pre><code>POST /services/&lt;id&gt;/voiceservers/backup/&lt;id&gt;/restore?access_token=&lt;access_token&gt;
@@ -477,8 +470,6 @@ The snapshot can is available for downloaded or it can be restored.</p>
           <footer>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="../../twitch/" class="btn btn-neutral float-right" title="Twitch Resource">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
         <a href="../global/" class="btn btn-neutral" title="Global"><span class="icon icon-circle-arrow-left"></span> Previous</a>
@@ -509,8 +500,6 @@ The snapshot can is available for downloaded or it can be restored.</p>
       
         <span><a href="../global/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
-      
-        <span style="margin-left: 15px"><a href="../../twitch/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>

@@ -95,13 +95,13 @@
         
             <ul>
             
-                <li class="toctree-l3"><a href="#user">/user</a></li>
+                <li class="toctree-l3"><a href="#get-user">GET /user</a></li>
                 
             
-                <li class="toctree-l3"><a href="#userwebinterface_token">/user/webinterface_token</a></li>
+                <li class="toctree-l3"><a href="#get-userwebinterface_token">GET /user/webinterface_token</a></li>
                 
             
-                <li class="toctree-l3"><a href="#userwebinterface_token_1">/user/webinterface_token</a></li>
+                <li class="toctree-l3"><a href="#delete-userwebinterface_token">DELETE /user/webinterface_token</a></li>
                 
             
             </ul>
@@ -340,13 +340,6 @@
     </ul>
 <li>
           
-            <li>
-    <li class="toctree-l1 ">
-        <a class="" href="../twitch/">Twitch Resource</a>
-        
-    </li>
-<li>
-          
         </ul>
       </div>
       &nbsp;
@@ -383,7 +376,7 @@
           <div role="main">
             <div class="section">
               
-                <h2 id="user">/user</h2>
+                <h2 id="get-user">GET /user</h2>
 <p>The user resource gives you information about your user profile.</p>
 <p>Request:</p>
 <pre><code>GET /user?access_token=&lt;access_token&gt;
@@ -414,7 +407,7 @@
 }
 </code></pre>
 
-<h2 id="userwebinterface_token">/user/webinterface_token</h2>
+<h2 id="get-userwebinterface_token">GET /user/webinterface_token</h2>
 <p>To access the webinterface you need a special access token with a lifetime of 24 hours.
 You can request this access token via this endpoint.</p>
 <p>The token will only change every 24 hours and will be cached.
@@ -435,7 +428,7 @@ For detailed information about the Webinterface Login please <a href="../../reso
 }
 </code></pre>
 
-<h2 id="userwebinterface_token_1">/user/webinterface_token</h2>
+<h2 id="delete-userwebinterface_token">DELETE /user/webinterface_token</h2>
 <p>This endpoint allows you to logout all users from your webinterface.</p>
 <p>Request:</p>
 <pre><code>DELETE /user/webinterface_token?access_token=&lt;access_token&gt;

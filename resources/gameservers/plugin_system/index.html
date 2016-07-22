@@ -272,19 +272,19 @@
         
             <ul>
             
-                <li class="toctree-l3"><a href="#gameserversplugin_systeminfo">/gameservers/plugin_system/info</a></li>
+                <li class="toctree-l3"><a href="#get-gameserversplugin_systeminfo">GET /gameservers/plugin_system/info</a></li>
                 
             
-                <li class="toctree-l3"><a href="#gameserversplugin_systeminstall">/gameservers/plugin_system/install</a></li>
+                <li class="toctree-l3"><a href="#post-gameserversplugin_systeminstall">POST /gameservers/plugin_system/install</a></li>
                 
             
-                <li class="toctree-l3"><a href="#gameserversplugin_systemuninstall">/gameservers/plugin_system/uninstall</a></li>
+                <li class="toctree-l3"><a href="#delete-gameserversplugin_systemuninstall">DELETE /gameservers/plugin_system/uninstall</a></li>
                 
             
-                <li class="toctree-l3"><a href="#gameserversplugin_systemrestart">/gameservers/plugin_system/restart</a></li>
+                <li class="toctree-l3"><a href="#post-gameserversplugin_systemrestart">POST /gameservers/plugin_system/restart</a></li>
                 
             
-                <li class="toctree-l3"><a href="#gameserversplugin_systemstop">/gameservers/plugin_system/stop</a></li>
+                <li class="toctree-l3"><a href="#post-gameserversplugin_systemstop">POST /gameservers/plugin_system/stop</a></li>
                 
             
             </ul>
@@ -346,13 +346,6 @@
     </ul>
 <li>
           
-            <li>
-    <li class="toctree-l1 ">
-        <a class="" href="../../twitch/">Twitch Resource</a>
-        
-    </li>
-<li>
-          
         </ul>
       </div>
       &nbsp;
@@ -391,7 +384,7 @@
               
                 <p>This is the Nitrapi Plugin System documentation. </p>
 <p>The Plugin System is currently only available for Battlefield: Hardline.</p>
-<h2 id="gameserversplugin_systeminfo">/gameservers/plugin_system/info</h2>
+<h2 id="get-gameserversplugin_systeminfo">GET /gameservers/plugin_system/info</h2>
 <p>This command gives you informations about the installed plugin system</p>
 <p>Request:</p>
 <pre><code>GET /services/&lt;id&gt;/gameservers/plugin_system/info?access_token=&lt;access_token&gt;
@@ -420,7 +413,7 @@
 }
 </code></pre>
 
-<h2 id="gameserversplugin_systeminstall">/gameservers/plugin_system/install</h2>
+<h2 id="post-gameserversplugin_systeminstall">POST /gameservers/plugin_system/install</h2>
 <p>This command installs you a new plugin system instance.
 If there is already a instance installed you will get an error.</p>
 <p>Request:</p>
@@ -434,7 +427,7 @@ If there is already a instance installed you will get an error.</p>
 }
 </code></pre>
 
-<h2 id="gameserversplugin_systemuninstall">/gameservers/plugin_system/uninstall</h2>
+<h2 id="delete-gameserversplugin_systemuninstall">DELETE /gameservers/plugin_system/uninstall</h2>
 <p>This command uninstalls your plugin system instance.
 If there is no plugin instance you will get an error.</p>
 <p>Request:</p>
@@ -448,7 +441,7 @@ If there is no plugin instance you will get an error.</p>
 }
 </code></pre>
 
-<h2 id="gameserversplugin_systemrestart">/gameservers/plugin_system/restart</h2>
+<h2 id="post-gameserversplugin_systemrestart">POST /gameservers/plugin_system/restart</h2>
 <p>This command restarts your plugin system instance. </p>
 <p>Request:</p>
 <pre><code>POST /services/&lt;id&gt;/gameservers/plugin_system/restart?access_token=&lt;access_token&gt;
@@ -461,7 +454,7 @@ If there is no plugin instance you will get an error.</p>
 }
 </code></pre>
 
-<h2 id="gameserversplugin_systemstop">/gameservers/plugin_system/stop</h2>
+<h2 id="post-gameserversplugin_systemstop">POST /gameservers/plugin_system/stop</h2>
 <p>This command stops your plugin system instance. </p>
 <p>Request:</p>
 <pre><code>POST /services/&lt;id&gt;/gameservers/plugin_system/stop?access_token=&lt;access_token&gt;

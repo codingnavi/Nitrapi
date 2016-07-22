@@ -244,28 +244,28 @@
         
             <ul>
             
-                <li class="toctree-l3"><a href="#gameserversfile_serverlist">/gameservers/file_server/list</a></li>
+                <li class="toctree-l3"><a href="#get-gameserversfile_serverlist">GET /gameservers/file_server/list</a></li>
                 
             
-                <li class="toctree-l3"><a href="#gameserversfile_serverdownload">/gameservers/file_server/download</a></li>
+                <li class="toctree-l3"><a href="#get-gameserversfile_serverdownload">GET /gameservers/file_server/download</a></li>
                 
             
-                <li class="toctree-l3"><a href="#gameserversfile_serverupload">/gameservers/file_server/upload</a></li>
+                <li class="toctree-l3"><a href="#post-gameserversfile_serverupload">POST /gameservers/file_server/upload</a></li>
                 
             
-                <li class="toctree-l3"><a href="#gameserversfile_serverdelete">/gameservers/file_server/delete</a></li>
+                <li class="toctree-l3"><a href="#delete-gameserversfile_serverdelete">DELETE /gameservers/file_server/delete</a></li>
                 
             
-                <li class="toctree-l3"><a href="#gameserversfile_servercopy">/gameservers/file_server/copy</a></li>
+                <li class="toctree-l3"><a href="#post-gameserversfile_servercopy">POST /gameservers/file_server/copy</a></li>
                 
             
-                <li class="toctree-l3"><a href="#gameserversfile_servermove">/gameservers/file_server/move</a></li>
+                <li class="toctree-l3"><a href="#post-gameserversfile_servermove">POST /gameservers/file_server/move</a></li>
                 
             
-                <li class="toctree-l3"><a href="#gameserversfile_servermkdir">/gameservers/file_server/mkdir</a></li>
+                <li class="toctree-l3"><a href="#post-gameserversfile_servermkdir">POST /gameservers/file_server/mkdir</a></li>
                 
             
-                <li class="toctree-l3"><a href="#gameserversfile_serversize">/gameservers/file_server/size</a></li>
+                <li class="toctree-l3"><a href="#get-gameserversfile_serversize">GET /gameservers/file_server/size</a></li>
                 
             
             </ul>
@@ -355,13 +355,6 @@
     </ul>
 <li>
           
-            <li>
-    <li class="toctree-l1 ">
-        <a class="" href="../../twitch/">Twitch Resource</a>
-        
-    </li>
-<li>
-          
         </ul>
       </div>
       &nbsp;
@@ -401,7 +394,7 @@
                 <p>This is the game server file server documentation.</p>
 <p>For file up- and downloads you will receive a token and token endpoint from the api.
 You can download the files directory from the storage. Uploads can be done also directly to the storage.</p>
-<h2 id="gameserversfile_serverlist">/gameservers/file_server/list</h2>
+<h2 id="get-gameserversfile_serverlist">GET /gameservers/file_server/list</h2>
 <p>This command returns the complete content of a given directory.
 Optionally you can search recursively for a specific file name pattern.</p>
 <p>Request:</p>
@@ -445,7 +438,7 @@ search=*.cfg (optional)
 }
 </code></pre>
 
-<h2 id="gameserversfile_serverdownload">/gameservers/file_server/download</h2>
+<h2 id="get-gameserversfile_serverdownload">GET /gameservers/file_server/download</h2>
 <p>The command returns a file download url to get the file directly from the storage server</p>
 <p>Request:</p>
 <pre><code>GET /services/&lt;id&gt;/gameservers/file_server/download?access_token=&lt;access_token&gt;
@@ -469,7 +462,7 @@ search=*.cfg (optional)
 
 <p><strong>Doing the file download</strong></p>
 <p>Just make a GET request to the given url inclusive the token. You will receive the file download stream.</p>
-<h2 id="gameserversfile_serverupload">/gameservers/file_server/upload</h2>
+<h2 id="post-gameserversfile_serverupload">POST /gameservers/file_server/upload</h2>
 <p>The command returns a url to upload the file directly to the storage server</p>
 <p>Request:</p>
 <pre><code>POST /services/&lt;id&gt;/gameservers/file_server/upload?access_token=&lt;access_token&gt;
@@ -500,7 +493,7 @@ File streams are supported.</p>
 Content-Type: application/binary
 </code></pre>
 
-<h2 id="gameserversfile_serverdelete">/gameservers/file_server/delete</h2>
+<h2 id="delete-gameserversfile_serverdelete">DELETE /gameservers/file_server/delete</h2>
 <p>This commands deletes a file or directory (recursively) </p>
 <p>Request:</p>
 <pre><code>DELETE /services/&lt;id&gt;/gameservers/file_server/delete?access_token=&lt;access_token&gt;
@@ -517,7 +510,7 @@ Content-Type: application/binary
 }
 </code></pre>
 
-<h2 id="gameserversfile_servercopy">/gameservers/file_server/copy</h2>
+<h2 id="post-gameserversfile_servercopy">POST /gameservers/file_server/copy</h2>
 <p>This commands copies a file or directory (recursively) </p>
 <p>Request:</p>
 <pre><code>POST /services/&lt;id&gt;/gameservers/file_server/copy?access_token=&lt;access_token&gt;
@@ -537,7 +530,7 @@ target_name=restart-copy.log
 }
 </code></pre>
 
-<h2 id="gameserversfile_servermove">/gameservers/file_server/move</h2>
+<h2 id="post-gameserversfile_servermove">POST /gameservers/file_server/move</h2>
 <p>This commands renames/moves a file or directory (recursively) </p>
 <p>Request:</p>
 <pre><code>POST /services/&lt;id&gt;/gameservers/file_server/move?access_token=&lt;access_token&gt;
@@ -561,7 +554,7 @@ target_filename=old-restart.log (optional, can be only used for files)
 }
 </code></pre>
 
-<h2 id="gameserversfile_servermkdir">/gameservers/file_server/mkdir</h2>
+<h2 id="post-gameserversfile_servermkdir">POST /gameservers/file_server/mkdir</h2>
 <p>This command creates a directory</p>
 <p>Request:</p>
 <pre><code>POST /services/&lt;id&gt;/gameservers/file_server/mkdir?access_token=&lt;access_token&gt;
@@ -579,7 +572,7 @@ name=newDirectory
 }
 </code></pre>
 
-<h2 id="gameserversfile_serversize">/gameservers/file_server/size</h2>
+<h2 id="get-gameserversfile_serversize">GET /gameservers/file_server/size</h2>
 <p>Calculates the full size of a given file or directory.</p>
 <p>Request:</p>
 <pre><code>GET /services/&lt;id&gt;/gameservers/file_server/size?access_token=&lt;access_token&gt;

@@ -237,16 +237,16 @@
         
             <ul>
             
-                <li class="toctree-l3"><a href="#gameserversgames">/gameservers/games</a></li>
+                <li class="toctree-l3"><a href="#get-gameserversgames">GET /gameservers/games</a></li>
                 
             
-                <li class="toctree-l3"><a href="#gameserversgamesstart">/gameservers/games/start</a></li>
+                <li class="toctree-l3"><a href="#post-gameserversgamesstart">POST /gameservers/games/start</a></li>
                 
             
-                <li class="toctree-l3"><a href="#gameserversgamesinstall">/gameservers/games/install</a></li>
+                <li class="toctree-l3"><a href="#post-gameserversgamesinstall">POST /gameservers/games/install</a></li>
                 
             
-                <li class="toctree-l3"><a href="#gameserversgamesuninstall">/gameservers/games/uninstall</a></li>
+                <li class="toctree-l3"><a href="#delete-gameserversgamesuninstall">DELETE /gameservers/games/uninstall</a></li>
                 
             
             </ul>
@@ -343,13 +343,6 @@
     </ul>
 <li>
           
-            <li>
-    <li class="toctree-l1 ">
-        <a class="" href="../../twitch/">Twitch Resource</a>
-        
-    </li>
-<li>
-          
         </ul>
       </div>
       &nbsp;
@@ -387,7 +380,7 @@
             <div class="section">
               
                 <p>This documentation shows you main part of the unique game swichting system.</p>
-<h2 id="gameserversgames">/gameservers/games</h2>
+<h2 id="get-gameserversgames">GET /gameservers/games</h2>
 <p>This command gives you information about the installed and available games.</p>
 <p>Request:</p>
 <pre><code>GET /services/&lt;id&gt;/gameservers/games?access_token=&lt;access_token&gt;
@@ -439,7 +432,7 @@
 }
 </code></pre>
 
-<h2 id="gameserversgamesstart">/gameservers/games/start</h2>
+<h2 id="post-gameserversgamesstart">POST /gameservers/games/start</h2>
 <p>Use this command to change the running game if a game is already installed.</p>
 <p>Request:</p>
 <pre><code>POST /services/&lt;id&gt;/gameservers/games/restart?access_token=&lt;access_token&gt;
@@ -456,7 +449,7 @@
 }
 </code></pre>
 
-<h2 id="gameserversgamesinstall">/gameservers/games/install</h2>
+<h2 id="post-gameserversgamesinstall">POST /gameservers/games/install</h2>
 <p>This command (re)installs you the specific game.
 Optionally you can provide a modpack to the game.</p>
 <p>Request:</p>
@@ -475,7 +468,7 @@ modpack=AltisLife-3.1.4.8-extDB-0.zip (optional, the file name of the modpack)
 }
 </code></pre>
 
-<h2 id="gameserversgamesuninstall">/gameservers/games/uninstall</h2>
+<h2 id="delete-gameserversgamesuninstall">DELETE /gameservers/games/uninstall</h2>
 <p>This command uninstalls a specific game.</p>
 <p>Request:</p>
 <pre><code>DELETE /services/&lt;id&gt;/gameservers/games/uninstall?access_token=&lt;access_token&gt;

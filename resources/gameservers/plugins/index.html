@@ -265,10 +265,10 @@
         
             <ul>
             
-                <li class="toctree-l3"><a href="#gameserverplugins">/gameserver/plugins</a></li>
+                <li class="toctree-l3"><a href="#get-gameserverplugins">GET /gameserver/plugins</a></li>
                 
             
-                <li class="toctree-l3"><a href="#gameserverpluginsid">/gameserver/plugins/:id</a></li>
+                <li class="toctree-l3"><a href="#get-gameserverpluginsid">GET /gameserver/plugins/:id</a></li>
                 
             
                 <li class="toctree-l3"><a href="#sources">Sources</a></li>
@@ -340,13 +340,6 @@
     </ul>
 <li>
           
-            <li>
-    <li class="toctree-l1 ">
-        <a class="" href="../../twitch/">Twitch Resource</a>
-        
-    </li>
-<li>
-          
         </ul>
       </div>
       &nbsp;
@@ -387,7 +380,7 @@
 <p>You can query plugins for specific games and additional information with a specific plugin id.
 This information is refreshing many times a day.</p>
 <p><em>You can actually only query Minecraft plugins, but more games will follow.</em></p>
-<h2 id="gameserverplugins">/gameserver/plugins</h2>
+<h2 id="get-gameserverplugins">GET /gameserver/plugins</h2>
 <p>This is the main interface, for all plugins.
 Maximum result limit for each query is 1000.</p>
 <p>Request:</p>
@@ -425,7 +418,7 @@ imit=&lt;limit-num&gt; (optional)
    }
 </code></pre>
 
-<h2 id="gameserverpluginsid">/gameserver/plugins/:id</h2>
+<h2 id="get-gameserverpluginsid">GET /gameserver/plugins/:id</h2>
 <p>This is the interface, to get additional information about a plugin. </p>
 <p>Request:</p>
 <pre><code>GET /services/&lt;id&gt;/gameserver/plugins/&lt;id&gt;?access_token=&lt;access_token&gt;

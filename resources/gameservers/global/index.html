@@ -216,28 +216,28 @@
         
             <ul>
             
-                <li class="toctree-l3"><a href="#gameservers">/gameservers</a></li>
+                <li class="toctree-l3"><a href="#get-gameservers">GET /gameservers</a></li>
                 
             
-                <li class="toctree-l3"><a href="#gameserversstats">/gameservers/stats</a></li>
+                <li class="toctree-l3"><a href="#get-gameserversstats">GET /gameservers/stats</a></li>
                 
             
-                <li class="toctree-l3"><a href="#gameserversrestart">/gameservers/restart</a></li>
+                <li class="toctree-l3"><a href="#post-gameserversrestart">POST /gameservers/restart</a></li>
                 
             
-                <li class="toctree-l3"><a href="#gameserversstop">/gameservers/stop</a></li>
+                <li class="toctree-l3"><a href="#post-gameserversstop">POST /gameservers/stop</a></li>
                 
             
-                <li class="toctree-l3"><a href="#gameserversftppassword">/gameservers/ftp/password</a></li>
+                <li class="toctree-l3"><a href="#post-gameserversftppassword">POST /gameservers/ftp/password</a></li>
                 
             
-                <li class="toctree-l3"><a href="#gameserversmysqlpassword">/gameservers/mysql/password</a></li>
+                <li class="toctree-l3"><a href="#post-gameserversmysqlpassword">POST /gameservers/mysql/password</a></li>
                 
             
-                <li class="toctree-l3"><a href="#gameserversmysqlreset">/gameservers/mysql/reset</a></li>
+                <li class="toctree-l3"><a href="#post-gameserversmysqlreset">POST /gameservers/mysql/reset</a></li>
                 
             
-                <li class="toctree-l3"><a href="#gameserverslogs">/gameservers/logs</a></li>
+                <li class="toctree-l3"><a href="#post-gameserverslogs">POST /gameservers/logs</a></li>
                 
             
             </ul>
@@ -355,13 +355,6 @@
     </ul>
 <li>
           
-            <li>
-    <li class="toctree-l1 ">
-        <a class="" href="../../twitch/">Twitch Resource</a>
-        
-    </li>
-<li>
-          
         </ul>
       </div>
       &nbsp;
@@ -399,7 +392,7 @@
             <div class="section">
               
                 <p>This are global commands are for gameservers.</p>
-<h2 id="gameservers">/gameservers</h2>
+<h2 id="get-gameservers">GET /gameservers</h2>
 <p>This command returns all game server information which are available</p>
 <p>Request:</p>
 <pre><code>GET /services/&lt;id&gt;/gameservers?access_token=&lt;access_token&gt;
@@ -576,7 +569,7 @@
 </tr>
 </tbody>
 </table>
-<h2 id="gameserversstats">/gameservers/stats</h2>
+<h2 id="get-gameserversstats">GET /gameservers/stats</h2>
 <p>Returns the usage statistics of the gameserver.
 Optionally you can specify a time range between 1-24 hours.</p>
 <p>GET Parameters:</p>
@@ -661,7 +654,7 @@ Optionally you can specify a time range between 1-24 hours.</p>
 }
 </code></pre>
 
-<h2 id="gameserversrestart">/gameservers/restart</h2>
+<h2 id="post-gameserversrestart">POST /gameservers/restart</h2>
 <p>Starts or restarts the game server. Optional with restart message for restart.log.</p>
 <p>Request:</p>
 <pre><code>POST /services/&lt;id&gt;/gameservers/restart?access_token=&lt;access_token&gt;
@@ -679,7 +672,7 @@ restart_message=This message will be posted in the Ingame Chat if available (opt
 }
 </code></pre>
 
-<h2 id="gameserversstop">/gameservers/stop</h2>
+<h2 id="post-gameserversstop">POST /gameservers/stop</h2>
 <p>Stopps the game server. Optional with stop message for restart.log</p>
 <p>Request:</p>
 <pre><code>POST /services/&lt;id&gt;/gameservers/stop?access_token=&lt;access_token&gt;
@@ -697,7 +690,7 @@ stop_message=This message will be posted in the Ingame Chat if available (option
 }
 </code></pre>
 
-<h2 id="gameserversftppassword">/gameservers/ftp/password</h2>
+<h2 id="post-gameserversftppassword">POST /gameservers/ftp/password</h2>
 <p>Changes the ftp password from the gameserver.</p>
 <p>Request:</p>
 <pre><code>POST /services/&lt;id&gt;/gameservers/ftp/password?access_token=&lt;access_token&gt;
@@ -714,7 +707,7 @@ stop_message=This message will be posted in the Ingame Chat if available (option
 }
 </code></pre>
 
-<h2 id="gameserversmysqlpassword">/gameservers/mysql/password</h2>
+<h2 id="post-gameserversmysqlpassword">POST /gameservers/mysql/password</h2>
 <p>Changes the MySQL password from the gameservers database.</p>
 <p>Request:</p>
 <pre><code>POST /services/&lt;id&gt;/gameservers/mysql/password?access_token=&lt;access_token&gt;
@@ -731,7 +724,7 @@ stop_message=This message will be posted in the Ingame Chat if available (option
 }
 </code></pre>
 
-<h2 id="gameserversmysqlreset">/gameservers/mysql/reset</h2>
+<h2 id="post-gameserversmysqlreset">POST /gameservers/mysql/reset</h2>
 <p>Truncates the MySQL database of the gameserver. Optionally you can set a new password.</p>
 <p>Request:</p>
 <pre><code>POST /services/&lt;id&gt;/gameservers/mysql/reset?access_token=&lt;access_token&gt;
@@ -748,7 +741,7 @@ stop_message=This message will be posted in the Ingame Chat if available (option
 }
 </code></pre>
 
-<h2 id="gameserverslogs">/gameservers/logs</h2>
+<h2 id="post-gameserverslogs">POST /gameservers/logs</h2>
 <p>Returns the all log entries for the server. This action shows all done API requests.</p>
 <p>Request:</p>
 <pre><code>POST /services/&lt;id&gt;/gameservers/logs?access_token=&lt;access_token&gt;

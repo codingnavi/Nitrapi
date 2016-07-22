@@ -223,19 +223,19 @@
         
             <ul>
             
-                <li class="toctree-l3"><a href="#gameserverssettings">/gameservers/settings</a></li>
+                <li class="toctree-l3"><a href="#post-gameserverssettings">POST /gameservers/settings</a></li>
                 
             
-                <li class="toctree-l3"><a href="#gameserverssettingssets">/gameservers/settings/sets</a></li>
+                <li class="toctree-l3"><a href="#get-gameserverssettingssets">GET /gameservers/settings/sets</a></li>
                 
             
-                <li class="toctree-l3"><a href="#gameserverssettingssets_1">/gameservers/settings/sets</a></li>
+                <li class="toctree-l3"><a href="#post-gameserverssettingssets">POST /gameservers/settings/sets</a></li>
                 
             
-                <li class="toctree-l3"><a href="#gameserverssettingssetsid">/gameservers/settings/sets/:id</a></li>
+                <li class="toctree-l3"><a href="#delete-gameserverssettingssetsid">DELETE /gameservers/settings/sets/:id</a></li>
                 
             
-                <li class="toctree-l3"><a href="#gameserverssettingssetsidrestore">/gameservers/settings/sets/:id/restore</a></li>
+                <li class="toctree-l3"><a href="#post-gameserverssettingssetsidrestore">POST /gameservers/settings/sets/:id/restore</a></li>
                 
             
             </ul>
@@ -346,13 +346,6 @@
     </ul>
 <li>
           
-            <li>
-    <li class="toctree-l1 ">
-        <a class="" href="../../twitch/">Twitch Resource</a>
-        
-    </li>
-<li>
-          
         </ul>
       </div>
       &nbsp;
@@ -389,7 +382,7 @@
           <div role="main">
             <div class="section">
               
-                <h2 id="gameserverssettings">/gameservers/settings</h2>
+                <h2 id="post-gameserverssettings">POST /gameservers/settings</h2>
 <p>Updates a value of a specific setting.</p>
 <p>Request:</p>
 <pre><code>POST /services/&lt;id&gt;/gameservers/settings?access_token=&lt;access_token&gt;
@@ -414,7 +407,7 @@ value=true
 }
 </code></pre>
 
-<h2 id="gameserverssettingssets">/gameservers/settings/sets</h2>
+<h2 id="get-gameserverssettingssets">GET /gameservers/settings/sets</h2>
 <p>Lists all available config sets.</p>
 <p>Request:</p>
 <pre><code>GET /services/&lt;id&gt;/gameservers/settings/sets?access_token=&lt;access_token&gt;
@@ -454,7 +447,7 @@ value=true
 }
 </code></pre>
 
-<h2 id="gameserverssettingssets_1">/gameservers/settings/sets</h2>
+<h2 id="post-gameserverssettingssets">POST /gameservers/settings/sets</h2>
 <p>Creates a new config set with the current settings.</p>
 <p>Request:</p>
 <pre><code>POST /services/&lt;id&gt;/gameservers/settings/sets?access_token=&lt;access_token&gt;
@@ -471,7 +464,7 @@ value=true
 }
 </code></pre>
 
-<h2 id="gameserverssettingssetsid">/gameservers/settings/sets/:id</h2>
+<h2 id="delete-gameserverssettingssetsid">DELETE /gameservers/settings/sets/:id</h2>
 <p>Deletes a specific config set.</p>
 <p>Request:</p>
 <pre><code>DELETE /services/&lt;id&gt;/gameservers/settings/sets/&lt;id&gt;?access_token=&lt;access_token&gt;
@@ -484,7 +477,7 @@ value=true
 }
 </code></pre>
 
-<h2 id="gameserverssettingssetsidrestore">/gameservers/settings/sets/:id/restore</h2>
+<h2 id="post-gameserverssettingssetsidrestore">POST /gameservers/settings/sets/:id/restore</h2>
 <p>Restores a specific config set.</p>
 <p>Request:</p>
 <pre><code>POST /services/&lt;id&gt;/gameservers/settings/sets/&lt;id&gt;/restore?access_token=&lt;access_token&gt;

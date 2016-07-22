@@ -258,16 +258,16 @@
         
             <ul>
             
-                <li class="toctree-l3"><a href="#gameserversaddons">/gameservers/addons</a></li>
+                <li class="toctree-l3"><a href="#get-gameserversaddons">GET /gameservers/addons</a></li>
                 
             
-                <li class="toctree-l3"><a href="#gameserversaddonsinstall">/gameservers/addons/install</a></li>
+                <li class="toctree-l3"><a href="#post-gameserversaddonsinstall">POST /gameservers/addons/install</a></li>
                 
             
-                <li class="toctree-l3"><a href="#gameserversaddonsreinstall">/gameservers/addons/reinstall</a></li>
+                <li class="toctree-l3"><a href="#post-gameserversaddonsreinstall">POST /gameservers/addons/reinstall</a></li>
                 
             
-                <li class="toctree-l3"><a href="#gameserversaddonsuninstall">/gameservers/addons/uninstall</a></li>
+                <li class="toctree-l3"><a href="#delete-gameserversaddonsuninstall">DELETE /gameservers/addons/uninstall</a></li>
                 
             
             </ul>
@@ -343,13 +343,6 @@
     </ul>
 <li>
           
-            <li>
-    <li class="toctree-l1 ">
-        <a class="" href="../../twitch/">Twitch Resource</a>
-        
-    </li>
-<li>
-          
         </ul>
       </div>
       &nbsp;
@@ -388,7 +381,7 @@
               
                 <p>Nitrado addons (german "Zusatzpakete") are small additional files for
 the installed gameserver.</p>
-<h2 id="gameserversaddons">/gameservers/addons</h2>
+<h2 id="get-gameserversaddons">GET /gameservers/addons</h2>
 <p>List all available addons for the current gameserver with the status
 (installed, uninstalled, unknown). A localized deescription helps
 to identify the addons.</p>
@@ -410,7 +403,7 @@ to identify the addons.</p>
 }
 </code></pre>
 
-<h2 id="gameserversaddonsinstall">/gameservers/addons/install</h2>
+<h2 id="post-gameserversaddonsinstall">POST /gameservers/addons/install</h2>
 <p>Install the given addon</p>
 <p>Request:</p>
 <pre><code>POST /services/&lt;id&gt;/gameservers/addons/install?access_token=&lt;access_token&gt;
@@ -427,7 +420,7 @@ to identify the addons.</p>
 }
 </code></pre>
 
-<h2 id="gameserversaddonsreinstall">/gameservers/addons/reinstall</h2>
+<h2 id="post-gameserversaddonsreinstall">POST /gameservers/addons/reinstall</h2>
 <p>Reinstall the given addon</p>
 <p>Request:</p>
 <pre><code>POST /services/&lt;id&gt;/gameservers/addons/reinstall?access_token=&lt;access_token&gt;
@@ -444,10 +437,10 @@ to identify the addons.</p>
 }
 </code></pre>
 
-<h2 id="gameserversaddonsuninstall">/gameservers/addons/uninstall</h2>
+<h2 id="delete-gameserversaddonsuninstall">DELETE /gameservers/addons/uninstall</h2>
 <p>Remove the given addon</p>
 <p>Request:</p>
-<pre><code>POST /services/&lt;id&gt;/gameservers/addons/uninstall?access_token=&lt;access_token&gt;
+<pre><code>DELETE /services/&lt;id&gt;/gameservers/addons/uninstall?access_token=&lt;access_token&gt;
 </code></pre>
 
 <p>POST parameters:</p>
